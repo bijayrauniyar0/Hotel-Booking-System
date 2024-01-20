@@ -1,0 +1,127 @@
+/* Add this to your existing CSS */
+.slideshow-container {
+    max-width: 100%;
+    max-height: 575px; /* Set a maximum height for the slideshow */
+    overflow: hidden; /* Hide overflow to prevent overlapping */
+    position: relative;
+    margin: auto;
+  }
+  
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: auto; 
+}
+
+.text, .text1, .imgBook {
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.text {
+  top: 20%;
+  font-size: 4rem;
+  color: white;
+}
+
+.text1 {
+  top: 28%;
+  font-size: 2rem;
+  color: white;
+}
+
+.imgBook {
+  top: 35%;
+}
+
+.imgBook img {
+  width: 200px; 
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+hr{
+  background: gray;
+  margin: 20px;
+  height: 3px;
+}
+.quarter{
+  background-image: url(/images/resort-blur.jpg);
+  background-size: cover;
+}
+.facilities h2{
+  margin: 20px 0 0 100px;
+  font-size: 2rem;
+  color: black;
+  
+}
+.quarter .horizental{
+  height: 4px;
+  width: 10vw;
+  background: rgb(44, 28, 187); 
+  margin: 3px 0px 0px 100px;
+}
+.image-container{
+  display: flex;
+  justify-content: center;
+}
+.image-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:  10px 10px 5px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: center;
+  margin: 40px 70px;
+ 
+
+}
+
+.image-box img {
+  max-width: 100%;
+  height: 200px;
+
+}
+.image-box .last-img{
+  width: 300px;
+}
+
+.label-img {
+  background-color: #4bc78d;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  font-weight: bold;
+}
+

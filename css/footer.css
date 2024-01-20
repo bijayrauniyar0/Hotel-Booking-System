@@ -1,0 +1,197 @@
+/* footer */
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    background: #b0afee;
+  }
+  
+  footer .vertical{
+    height: 56vh;
+    width: 3px;
+    background: rgb(170, 168, 190);
+    margin: 16px 2px;
+    
+  }
+  
+  /* left-section, signature */
+  .left-section{
+    margin-left: 12px;
+    width: 30%;
+  }
+  
+  .left-section .sign-h2{
+    color: #000000;
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.5rem;
+    margin: 20px 10px 40px 85px;
+  }
+  
+  .left-section .sign{
+    width: 100%;
+  }
+  
+  
+  
+  
+  /* mid section */
+  .mid-heading {
+    text-align: center;
+    color: #000000;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 18px;
+  }
+  
+  
+  .mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sub-sections {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .mid-left {
+    width: 30%; /* Adjust the width as needed */
+    margin: 0;
+    height: 50vh;
+  }
+  
+  .mid-right {
+    width: 65%; /* Adjust the width as needed */
+    margin: 0;
+    height: 50vh;
+  }
+  
+  /*  social media*/
+  .image-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px 30px -20px;
+  }
+  
+  .icon-box {
+    width: 48%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-box img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mid .mid-vertical{
+    height: 40vh;
+    width: 3px;
+    background: rgb(170, 168, 190);
+    margin: 0 0 100px 0;
+    
+  }
+  
+  /* mid right */
+  .mid-right{
+    margin-left: 22px;
+    margin-top: 80px;
+  }
+  .mid h2{
+    color: #000000;
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 20px;
+  
+  }
+  .mid .email{
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 18px;
+  }
+  .mid .number{
+    font-size: 18px;
+  }
+  .mid .location{
+    font-size: 18px;
+  }
+  
+  /* footer, contact form */
+  
+  .contact-h2{
+    text-align: left;
+    color: #000000;
+    margin: 20px 0;
+    font-size: 1.8rem;
+  }
+  .right-section .horizental{
+    height: 3px;
+    width: 6vw;
+    background: rgb(44, 28, 187);
+    margin: -17px 0px 16px 6px;
+  }
+  .right-section{
+    width: 30%;
+    margin-left:20px ;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .form .full-name{
+    display: flex;
+  }
+  label {
+    margin-top: 10px;
+    color: #333;
+  }
+  form #name{
+    width: 28%;
+  }
+  #contactForm{
+    font-family: Helvetica, sans-serif;
+  }
+  input,
+  textarea {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  .end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Adjust the height as needed */
+    background-color:#000129;
+  }
+  
+  .vertical-end {
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    margin: 0;
+    background-color:#000129;
+  }
+  
