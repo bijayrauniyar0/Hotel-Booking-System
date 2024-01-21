@@ -2,8 +2,8 @@
 
 footer{
     display: flex;
-    justify-content: space-around;
-    height: 100%;
+    justify-content: space-between;
+    height: 60vh;
     background: #b0afee;
   }
   
@@ -18,37 +18,40 @@ footer{
   /* left-section, signature */
   .left-section{
     margin-left: 12px;
-    width: 30%;
+    width: 25%;
+    margin-top: 40px;
   }
   
   .left-section .sign-h2{
     color: #000000;
     font-family: 'DM Serif Display', serif;
     font-size: 2.5rem;
-    margin: 20px 10px 40px 85px;
+    text-align: center;
+    margin: 20px 0;
   }
   
   .left-section .sign{
     width: 100%;
   }
   
-  
-  
+    
   
   /* mid section */
   .mid-heading {
-    text-align: center;
+    text-align: left;
     color: #000000;
     font-size: 2rem;
-    margin-bottom: 20px;
-    margin-top: 18px;
+    margin: 100px 0 40px 0;
+  
   }
+
   
-  
-  .mid {
+  .mid-footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    width: 40%;
   }
   
   .sub-sections {
@@ -56,25 +59,26 @@ footer{
     width: 100%;
     align-items: center;
     justify-content: space-around;
+    margin-top: -50px;
   }
   
   .mid-left {
-    width: 30%; /* Adjust the width as needed */
+    width: 40%; /* Adjust the width as needed */
     margin: 0;
     height: 50vh;
   }
   
   .mid-right {
-    width: 65%; /* Adjust the width as needed */
-    margin: 0;
+    width: 55%; /* Adjust the width as needed */
+    margin-bottom: 20px;
     height: 50vh;
   }
   
   /*  social media*/
   .image-row {
     display: flex;
-    justify-content: space-between;
-    margin: 20px 10px 30px -20px;
+    justify-content: space-around;
+    margin: 20px 10px 30px 0px;
   }
   
   .icon-box {
@@ -86,11 +90,11 @@ footer{
   }
   
   .icon-box img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
   }
   
-  .mid .mid-vertical{
+  .mid-footer .mid-vertical{
     height: 40vh;
     width: 3px;
     background: rgb(170, 168, 190);
@@ -100,25 +104,27 @@ footer{
   
   /* mid right */
   .mid-right{
-    margin-left: 22px;
     margin-top: 80px;
   }
-  .mid h2{
+  .mid-footer .sub-sections h2{
     color: #000000;
     font-family: 'DM Serif Display', serif;
     margin-bottom: 20px;
+    text-align: center;
   
   }
-  .mid .email{
+  .mid-footer .email{
     text-decoration: underline;
     font-style: italic;
-    font-size: 18px;
+    font-size: 1.8rem;
+    color: rgb(46, 46, 206);
   }
-  .mid .number{
-    font-size: 18px;
+  .mid-footer .number{
+    font-size: 1.8rem;
+
   }
-  .mid .location{
-    font-size: 18px;
+  .mid-footer .location{
+    font-size: 2rem;
   }
   
   /* footer, contact form */
@@ -137,7 +143,7 @@ footer{
   }
   .right-section{
     width: 30%;
-    margin-left:20px ;
+    margin: 0 20px;
   }
   
   form {

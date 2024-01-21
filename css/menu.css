@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(218, 170, 240);
+  background-color: rgb(224, 171, 171);
   color: rgb(56, 56, 56);
   font-family: 'Poppins', sans-serif;
 }
@@ -15,7 +15,7 @@ nav {
   align-items: center;
   justify-content: space-around;
   height: 59px;
-  background-color: rgb(130, 154, 219);
+  background-color: rgb(255, 252, 252);
   position: fixed;
   width: 100%; 
   top: 0; 
@@ -35,7 +35,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color:rgb(56, 56, 56);
+  color:rgb(0, 0, 0);
 }
 
 /* Style for the submenu */
@@ -49,9 +49,9 @@ nav ul ul {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
-  background-color: rgb(130, 154, 219);
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ccc;
+  border: 1px solid #7884f0;
   border-radius: 10px;
   margin-top: 10px;
   z-index: 2;
