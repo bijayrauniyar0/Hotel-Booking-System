@@ -146,12 +146,12 @@ footer{
     margin: 0 20px;
   }
   
-  form {
+  #contactForm {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  .form .full-name{
+  form .full-name{
     display: flex;
   }
   label {

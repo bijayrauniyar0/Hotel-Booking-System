@@ -1,8 +1,7 @@
-/* Add this to your existing CSS */
 .slideshow-container {
     max-width: 100%;
-    max-height: 675px; /* Set a maximum height for the slideshow */
-    overflow: hidden; /* Hide overflow to prevent overlapping */
+    max-height: 675px; /* maximum height for the slideshow */
+    overflow: hidden; /* Hiding overflow to prevent overlapping */
     position: relative;
     margin: auto;
   }

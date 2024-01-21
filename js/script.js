@@ -59,27 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//form validation
-document.addEventListener("DOMContentLoaded", function () {
-  var contactForm = document.getElementById("contactForm");
 
-  contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
 
-      // Validate email using a simple regular expression
-      var emailInput = document.getElementById("email");
-      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      
-      if (!emailRegex.test(emailInput.value)) {
-          alert("Please enter a valid email address.");
-          return;
-      }
+function validateEmail(email) {
+  // Regular expression for basic email validation
+  var email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return email_check.test(email);
+}
 
-      // If the email is valid, you can submit the form or perform other actions
-      alert("Form submitted successfully!");
-      contactForm.reset(); // Reset the form after submission
-  });
-});
 
 //contact scrolling effect
 document.addEventListener("DOMContentLoaded", function () {

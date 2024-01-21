@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/images/resort-blur.jpg);
+    background-size: cover;
+}
+
+
+.wrapper {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: auto; 
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper h1 {
+    font-size: 2rem;
+    margin: 20px 0 0 0;
+    color: black;
+}
+
+#signup-form {
+    width: 100%;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.label-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-group label {
+    width: 30%; /* Adjusted width for labels in the phone input */
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #5372F0;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2c52ed;
+}
+
+.sign-txt {
+    margin-top: 10px; /* Adjusted margin for better spacing */
+    text-align: center;
+}
+
+.sign-txt a {
+    color: #5372F0;
+    text-decoration: none;
+}
+
+.sign-txt a:hover {
+    text-decoration: underline;
+}
