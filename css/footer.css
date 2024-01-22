@@ -114,7 +114,6 @@ footer{
   
   }
   .mid-footer .email{
-    text-decoration: underline;
     font-style: italic;
     font-size: 1.8rem;
     color: rgb(46, 46, 206);
@@ -126,6 +125,17 @@ footer{
   .mid-footer .location{
     font-size: 2rem;
   }
+
+ .mid-footer .number:hover{
+    color: #2980b9;
+    text-decoration: underline;
+    cursor: pointer;
+ }
+ .mid-footer .email:hover{
+    color: #2980b9;
+    text-decoration: underline;
+    cursor: pointer;
+ }
   
   /* footer, contact form */
   

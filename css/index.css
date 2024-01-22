@@ -76,7 +76,7 @@ hr{
   height: 3px;
 }
 .quarter{
-  background-image: url(/images/resort-blur.jpg);
+  /* background-image: url(/images/resort-blur.jpg); */
   background-size: cover;
 }
 .facilities h2{
