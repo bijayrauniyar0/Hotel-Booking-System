@@ -60,7 +60,7 @@ nav ul ul {
   margin-top: 10px;
   z-index: 2;
   margin-top: 1px; 
-  width: 116px;
+  width: 150px;
 }
 
 nav ul ul li {
@@ -80,6 +80,9 @@ nav ul li:hover > ul {
 }
 
 
+nav .mid ul li a{
+  transition: color 0.3s ease-in-out;
+}
 nav .mid ul li a:hover {
   text-decoration: none;
   color: rgb(83, 53, 214);

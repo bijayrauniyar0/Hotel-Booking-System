@@ -1,62 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 body {
-    background-color: beige !important;
-    font-family: 'Montserrat', sans-serif;
-  }
-  .suites-title{
-    margin: 80px 0 0 30px;
-  }
-  .suites-title h2{
-    font-size: 2rem;
-    color: black;
-  }
-  .rev-horizental{
-    height: 4px;
-    width: 10vw;
-    background: rgb(44, 28, 187); 
-    margin: 7px 0px 0px 34px;
+  background-color: beige !important;
+  font-family: 'Montserrat', sans-serif;
+}
+.suites-title{
+  margin: 80px 0 0 30px;
+}
+.suites-title h2{
+  font-size: 2rem;
+  color: black;
+}
+.rev-horizental{
+  height: 4px;
+  width: 10vw;
+  background: rgb(44, 28, 187); 
+  margin: 7px 0px 0px 34px;
 
-  }
+}
+.suites-main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+.expensive-suites {
+  display: flex;
+  display: row;
+  justify-content: space-around;
+  height: 100%;
+}
+.villa-image{
+  width: 90%;
+  text-align: center;
+  margin: 20px;
+  height: 100%;
 
-  .suites-main {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-  }
-
-  .suites-image {
-    max-width: 400px;
-    text-align: center;
-    margin: 20px;
-  }
-
-  .suites-image img{
-    border-radius: 8px;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
-  }
-
-.suites-image h2{
-    text-align: center;
-    color: black;
-    margin: 20px 0;
+}
+.villa-image img{
+  height: 650px;
+  width: 100%;
 }
 
+.presidental-private-suites{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 20px 0 0;
+  justify-content: space-around;
+}
+.expensive-suites .content-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.private-image{
+  height: 350px;
+  width: 100%;
+  text-align: center;
+}
+.presidental-private-suites img{
+  width: 100%;
+  height: 250px;
+  
+}
+.suites-image {
+  width: 400px;
+  text-align: center;
+  margin: 20px;
+}
+
+.suites-image img, .expensive-suites img{
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.suites-image h2, .expensive-suites h2{
+  text-align: center;
+  color: black;
+  margin: 10px 0;
+}
+
+
 h2{
-    font-size: 34px;
+  font-size: 24px;
 }
 
 .bordered-h2 {
-    display: inline-block;
-    border: 1px solid #2a4dec;
-    padding: 10px; 
-    font-size: 25px !important;
-    margin: 0 !important;
-    border-radius: 10px;
+  display: inline-block;
+  border: 1px solid #2a4dec;
+  padding: 10px; 
+  font-size: 20px !important;
+  margin: 0 0 10px 0 !important;
+  border-radius: 10px;
+  
 }
 
-.content-container .bordered-h2:hover{
-    background-color: #284cf0;
-    color: white;
+main .content-container .bordered-h2:hover{
+  background-color: #284cf0;
+  color: white;
 }

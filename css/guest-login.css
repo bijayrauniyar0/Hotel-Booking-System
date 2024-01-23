@@ -15,7 +15,7 @@ body{
     align-items: center;
     justify-content: center;
     width: 400px;
-    height: 500px;
+    height: 450px;
     padding: 20px;
     background: #fff;
     border-radius: 10px;
@@ -23,8 +23,8 @@ body{
 }
 
 .wrapper h1{
-    font-size: 2rem;
-    margin: -20px 0 60px 0;
+    font-size: 28px;
+    margin: 0 0 30px 0;
     color: black;
 }
 
@@ -38,7 +38,7 @@ body{
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 5px;
 }
 
@@ -60,4 +60,13 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #2c52ed;
+}
+.wrapper .pass-txt{
+    margin: 0 0 10px 0;
+}
+.wrapper .pass-txt a,.wrapper .sign-txt a{
+    text-decoration: none;
+}
+.wrapper .pass-txt a:hover ,.wrapper .sign-txt a:hover{
+    text-decoration: underline;
 }
