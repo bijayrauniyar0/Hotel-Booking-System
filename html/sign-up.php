@@ -1,55 +1,21 @@
-
+<?php require 'partials/nav.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/sign-up.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0../css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com../css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
     <title>Hotel Booking System</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="left">
-                <ul>
-                    <li>
-                        <a href="index.html">Paradise Resort</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="mid">
-                <ul>
-                    <li id="home"><a href="index.html">Home</a></li>
-                    <li id="reservation"><a href="reservations.html">Reservations</a></li>
-                    <li id="about"><a href="about.html">About Us</a></li>
-                    <li id="contact"><a href="contact.html">Contact US</a></li>
-                    <li id="login"><a href="login.html">Login <i class="fa fa-caret-down"></i></a>
-                        <ul>
-                            <li><a href="adminLogin.html">Admin Login</a></li>
-                            <li><a href="guestLogin.html">Guest Login</a></li>
-                          </ul>
-                    </li>
-                    <li><a href="#contactFooter" data-target="contact">Sign Up</a></li>
-                </ul>
-            </div>
-            <div class="right">
-                <div class="vertical">
-                <ul>
-                    <li><a href="/"><img src="/images/book-now.png" alt="booking" class="book-img"></a></li>
-                </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
     <section class="main-block">
         <div class="form-container">
             <div class="wrapper">
@@ -87,8 +53,8 @@
         <div class="left-section">
             <h2 class="sign-h2">A trademark of</h2>
             <div class="sign">
-                <img src="/images/sign-1.png" alt="signature">
-                <img src="/images/sign-2.png" alt="signature">
+                <img src="../images/sign-1.png" alt="signature">
+                <img src="../images/sign-2.png" alt="signature">
             </div>
             
         </div>
@@ -103,26 +69,26 @@
                 <div class="mid-left">
                   <div class="image-row">
                       <div class="icon-box">
-                        <a href="#"><img src="/images/insta.png" alt=""></a>
+                        <a href="#"><img src="../images/insta.png" alt=""></a>
                       </div>
                       <div class="icon-box">
-                          <a href="#"><img src="/images/fb.png" alt=""></a>
-                      </div>
-                    </div>
-                    <div class="image-row">
-                      <div class="icon-box">
-                          <a href="#"><img src="/images/linkedin.png" alt=""></a>
-                      </div>
-                      <div class="icon-box">
-                          <a href="#"><img src="/images/twitter.png" alt=""></a>
+                          <a href="#"><img src="../images/fb.png" alt=""></a>
                       </div>
                     </div>
                     <div class="image-row">
                       <div class="icon-box">
-                          <a href="#"><img src="/images/whatsapp.png" alt=""></a>
+                          <a href="#"><img src="../images/linkedin.png" alt=""></a>
                       </div>
                       <div class="icon-box">
-                          <a href="#"><img src="/images/gmail.png" alt=""></a>
+                          <a href="#"><img src="../images/twitter.png" alt=""></a>
+                      </div>
+                    </div>
+                    <div class="image-row">
+                      <div class="icon-box">
+                          <a href="#"><img src="../images/whatsapp.png" alt=""></a>
+                      </div>
+                      <div class="icon-box">
+                          <a href="#"><img src="../images/gmail.png" alt=""></a>
                       </div>
                     </div>
                 </div>
@@ -172,7 +138,7 @@
     <div class="end">
     <div class="vertical-end">Copyright 2022-2025. All rights reserved</div>
     </div>
-<script src="/js/script.js"></script>
-<script src="/js/login.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/login.js"></script>
 </body>
 </html>

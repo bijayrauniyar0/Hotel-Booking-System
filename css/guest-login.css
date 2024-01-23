@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url(/images/resort-blur.jpg);
+    background-image: url(../images/resort-blur.jpg);
     background-size: cover;
 }
 
@@ -69,4 +69,16 @@ input[type="submit"]:hover {
 }
 .wrapper .pass-txt a:hover ,.wrapper .sign-txt a:hover{
     text-decoration: underline;
+}
+
+#navbar {
+    display: none;
+}
+
+#user-info {
+    display: none;
+}
+
+#logout, #edit {
+    display: none;
 }

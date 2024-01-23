@@ -26,3 +26,44 @@ function validateEmail(email) {
     return email_check.test(email);
 }
 
+
+//login option 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('login-form');
+    const navbar = document.getElementById('navbar');
+    const userInfo = document.getElementById('user-info');
+    const usernameDisplay = document.getElementById('username-display');
+    const logoutButton = document.getElementById('logout');
+    const editButton = document.getElementById('edit');
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const emailInput = document.getElementById('email').value;
+        // Perform login logic here (validate credentials, etc.)
+
+        // For simplicity, let's assume the login is successful
+        showNavbar(emailInput);
+    });
+
+    logoutButton.addEventListener('click', function() {
+        hideNavbar();
+    });
+
+    editButton.addEventListener('click', function() {
+        // Implement your edit logic here
+        alert('Edit functionality to be implemented.');
+    });
+
+    function showNavbar(email) {
+        navbar.style.display = 'block';
+        userInfo.style.display = 'block';
+        usernameDisplay.textContent = email;
+    }
+
+    function hideNavbar() {
+        navbar.style.display = 'none';
+        userInfo.style.display = 'none';
+        // Clear any user-specific data or perform logout logic here
+    }
+});

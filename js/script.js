@@ -1,36 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the "Login" menu item and its submenu
-  var loginMenu = document.getElementById("products");
-  var loginSubmenu = loginMenu.querySelector("ul");
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Get the "Login" menu item and its submenu
+//   var loginMenu = document.getElementById("products");
+//   var loginSubmenu = loginMenu.querySelector("ul");
 
-  // Show submenu with slide-in animation on mouseenter for both parent and submenu
-  loginMenu.addEventListener("mouseenter", function () {
-    loginSubmenu.style.opacity = 1;
-    loginSubmenu.style.height = loginSubmenu.scrollHeight + "px";
-  });
+//   // Show submenu with slide-in animation on mouseenter for both parent and submenu
+//   loginMenu.addEventListener("mouseenter", function () {
+//     loginSubmenu.style.opacity = 1;
+//     loginSubmenu.style.height = loginSubmenu.scrollHeight + "px";
+//   });
 
-  // Keep submenu visible when mouse is over the submenu
-  loginSubmenu.addEventListener("mouseenter", function () {
-    loginSubmenu.style.opacity = 1;
-    loginSubmenu.style.height = loginSubmenu.scrollHeight + "px";
-  });
+//   // Keep submenu visible when mouse is over the submenu
+//   loginSubmenu.addEventListener("mouseenter", function () {
+//     loginSubmenu.style.opacity = 1;
+//     loginSubmenu.style.height = loginSubmenu.scrollHeight + "px";
+//   });
 
-  // Hide submenu on mouseleave for both parent and submenu
-  loginMenu.addEventListener("mouseleave", function () {
-    hideSubmenu();
-  });
+//   // Hide submenu on mouseleave for both parent and submenu
+//   loginMenu.addEventListener("mouseleave", function () {
+//     hideSubmenu();
+//   });
 
-  // Hide submenu when mouse leaves the submenu
-  loginSubmenu.addEventListener("mouseleave", function () {
-    hideSubmenu();
-  });
+//   // Hide submenu when mouse leaves the submenu
+//   loginSubmenu.addEventListener("mouseleave", function () {
+//     hideSubmenu();
+//   });
 
-  // Function to hide the submenu
-  function hideSubmenu() {
-    loginSubmenu.style.opacity = 0;
-    loginSubmenu.style.height = 0;
-  }
-});
+//   // Function to hide the submenu
+//   function hideSubmenu() {
+//     loginSubmenu.style.opacity = 0;
+//     loginSubmenu.style.height = 0;
+//   }
+// });
 
 
 //slide show of images
