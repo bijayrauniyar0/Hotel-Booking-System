@@ -7,7 +7,7 @@
   }
   
   body {
-    background-image: url(/images/resort-blur.jpg);
+    background-image: url(../images/resort-blur.jpg) !important;
     color: rgb(56, 56, 56);
     font-family: 'Poppins', sans-serif;
     overflow: hidden;

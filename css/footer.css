@@ -163,13 +163,14 @@ footer{
   }
   form .full-name{
     display: flex;
+    justify-content: space-between;
   }
   label {
     margin-top: 10px;
     color: #333;
   }
   form #name{
-    width: 28%;
+    width: 35%;
   }
   #contactForm{
     font-family: Helvetica, sans-serif;

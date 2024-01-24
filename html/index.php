@@ -1,4 +1,3 @@
-<?php require 'partials/nav.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +15,7 @@
     <title>Hotel Booking System</title>
 </head>
 <body>
+<?php require 'partials/nav.php'; ?>
     <main>
         <!-- Slide show container -->
         <div class="slideshow-container">
@@ -130,96 +130,8 @@
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="left-section">
-            <h2 class="sign-h2">A trademark of</h2>
-            <div class="sign">
-                <img src="../images/sign-1.png" alt="signature">
-                <img src="../images/sign-2.png" alt="signature">
-            </div>
-            
-        </div>
+    <?php require 'partials/_footer.php'; ?>
 
-        <div class="vertical"></div> 
-        <!-- vertical line for border -->
-        <section class="mid-footer">
-        <h2 class="mid-heading">Get Connected:</h2>
-        <div class="horizental"></div>
-
-        <div class="sub-sections">
-        <div class="mid-left">
-            <div class="image-row">
-            <div class="icon-box">
-                <a href="#"><img src="../images/insta.png" alt=""></a>
-            </div>
-            <div class="icon-box">
-                <a href="#"><img src="../images/fb.png" alt=""></a>
-            </div>
-            </div>
-            <div class="image-row">
-            <div class="icon-box">
-                <a href="#"><img src="../images/linkedin.png" alt=""></a>
-            </div>
-            <div class="icon-box">
-                <a href="#"><img src="../images/twitter.png" alt=""></a>
-            </div>
-            </div>
-            <div class="image-row">
-            <div class="icon-box">
-                <a href="#"><img src="../images/whatsapp.png" alt=""></a>
-            </div>
-            <div class="icon-box">
-                <a href="#"><img src="../images/gmail.png" alt=""></a>
-            </div>
-            </div>
-        </div>
-
-    <div class="mid-vertical"></div>
-
-    <div class="mid-right">
-      <h2 class="location">Kathmandu, Nepal</h2>
-      <h2 class="number">+977-9876543210</h2>
-      <h2 class="email">info@brhotel.com</h2>
-    </div>
-  </div>
-</section>
-
-        
-        
-       
-        <div class="vertical"></div> 
-        <!-- vertical line for border -->
-
-
-
-        <div class="right-section">
-            <div class="contact-form">
-                <h2 class="contact-h2">Contact Us</h2>
-            
-            <div class="horizental"></div> 
-            <!-- design under h2 -->
-
-                <form id="contactForm" name="contact-form" action="#" method="post">
-                    <div class="full-name">
-                        <label for="name">First Name:</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Last Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
-        
-                    <label for="message">Your Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-        
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-    </footer>
-    <div class="end">
-    <div class="vertical-end">Copyright 2022-2025. All rights reserved</div>
-    </div>
     <script src="../js/script.js"></script>
 </body>
 </html>

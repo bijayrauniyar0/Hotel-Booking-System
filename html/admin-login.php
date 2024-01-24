@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
     <title>Hotel Booking System</title>
 </head>
 <body>
-<? require 'partials/_nav.php' ?>
+<?php require 'partials/nav.php'; ?>
 
     <section class="main-block">
         <div class="form-container">
@@ -32,7 +33,5 @@
         </div>
     </div>
     </section>
-<script src="../js/script.js"></script>
-<script src="../js/login.js"></script>
 </body>
 </html>
