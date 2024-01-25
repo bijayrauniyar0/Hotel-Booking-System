@@ -1,4 +1,28 @@
+<?php 
+    $login = false;
+    $loginError = false;
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        include 'partials/_dbconnect.php';
+
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $checkLoginDetails = "SELECT * FROM `admin` WHERE Email = '$email' AND Password = '$password'";
+        $result = mysqli_query($conn, $checkLoginDetails);
+
+        if (mysqli_num_rows($result) == 1) {
+            echo'
+            <script>
+                alert("Successfully Logged In");
+                window.location.href = "../booking-data.php"; 
+            </script>';
+        }
+        else {
+            $loginError = true;
+        } 
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +38,21 @@
 </head>
 <body>
 <?php require 'partials/nav.php'; ?>
+
+<?php
+    if($login){
+        echo'<div id="success-alert" role="alert">
+        <h2>Success!</h2> You are now logged in.
+        <button type="button" onclick="redirectToIndex()">OK</button>
+    </div>';
+    }
+    if($loginError){
+        echo'<div id="error-alert" role="alert" >
+        <h2>Error!</h2> Invalid Credentials
+        <button type="button" onclick="redirectToIndex()">OK</button>
+    </div>';
+    }
+?>
 
     <section class="main-block">
         <div class="form-container">

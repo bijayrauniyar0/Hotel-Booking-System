@@ -1,3 +1,34 @@
+<?php 
+    $loginError = false;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        include 'partials/_dbconnect.php';
+
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $sql = "SELECT * FROM `users` WHERE Email = '$email' ";
+        $result = mysqli_query($conn, $sql);
+        $num = mysqli_num_rows($result);
+        if ( $num == 1) {
+            while($row = mysqli_fetch_assoc($result)){
+                if(password_verify($password, $row["Password"])){ 
+                    //input password is converted into has then the hash checked from the database
+                    session_start();
+                    $_SESSION['loggedin']=true;
+                    header("Location: welcome.php");
+                }
+                else{
+                    $loginError=true;
+                }
+            }
+
+        }
+        else {
+            $loginError = true;
+        } 
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +42,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com../css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
     <title>Hotel Booking System</title>
+    <style>
+        .btn-ok a{
+            text-decoration:none;
+            color: white;
+        }
+        .btn-ok{
+           margin-bottom:10px;
+        }
+        .sign-up a{
+            text-decoration:none;
+            color: rgb(13, 54, 190);
+            
+        }
+        .sign-up{
+            font-size:14px;
+            margin-bottom: 10px;
+        }
+        .sign-up a:hover{
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 <?php require 'partials/nav.php'; ?>
+
+<?php
+    if($loginError){
+        echo'<div id="error-alert" role="alert" >
+        <h2>Error!</h2> Invalid Credentials 
+        <button type="button" class="btn-ok"><a href="guest-login.php">OK</a></button><br>
+        <p class="sign-up">Not a member! <a href="sign-up.php">Sign Up</a></p>
+        
+    </div>';
+    }
+?>
     <section class="main-block">
         <div class="form-container">
             <div class="wrapper">
@@ -25,7 +88,7 @@
                     </div>
                 </div>
                 <h1>Login as Guest</h1>
-                <form id="login-form" name="myform" action="user.php" method="post">
+                <form id="login-form" name="myform" action="../HTML/guest-login.php" method="POST">
                     <div class="field">
                         <label for="email">Email Address</label>
                         <input type="text" id="email" name="email" placeholder="Enter your email">
@@ -42,8 +105,7 @@
         </div>
     </section>
     
-    <?php require 'partials/_footer.php'; ?>
-<script src="../js/script.js"></script>
+<?php require 'partials/_footer.php'; ?>
 <script src="../js/login.js"></script>
 </body>
 </html>

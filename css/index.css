@@ -2,6 +2,11 @@ body {
   background-color: beige !important;
   font-family: 'Montserrat', sans-serif;
 }
+#redirect{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .slideshow-container {
     max-width: 100%;
     max-height: 675px; /* maximum height for the slideshow */

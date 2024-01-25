@@ -18,6 +18,8 @@
         $numberLength = strlen($phoneNumber);
         $exists = false;
 
+        //check if the email exists
+
         $checkEmailQuery = "SELECT * FROM `users` WHERE `Email` = '$email'";
         $checkEmailResult = mysqli_query($conn, $checkEmailQuery);
 
@@ -34,7 +36,11 @@
             $phoneError = true;
         }
         elseif ($passwordLength >= 8 && $password == $cPassword && $exists == false) {
-            $sql = "INSERT INTO `users` (`name`, `Phone`, `Email`, `Password`, `dt`) VALUES ('$name', '$phoneNumber', '$email', '$password', current_timestamp())";
+            
+            //hashing pw and storing pw in form of hash
+
+            $hash= password_hash($password, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO `users` (`name`, `Phone`, `Email`, `Password`, `dt`) VALUES ('$name', '$phoneNumber', '$email', '$hash', current_timestamp())";
 
             $result = mysqli_query($conn, $sql);
 
@@ -65,7 +71,7 @@
     if($successAlert){
         echo'<div id="success-alert" role="alert">
         <h2>Success!</h2> Account has been created successfully
-        <button type="button" onclick="redirectToIndex()">OK</button>
+        <button type="button" onclick="redirectToLogIn()">OK</button>
     </div>';
     }
     if($emailExistsError){
@@ -112,15 +118,15 @@
                         <span id=checkNumber></span>
                         <div class="phone-input">
                             <!-- <input type="tel" id="countryCode" name="countryCode" placeholder="Country Code" required> -->
-                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+                            <input type="tel" maxlength="10" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
                         </div>
                     </div>
                     <div class="field">
                         <span id=password-length-error></span>
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <input type="password" maxlength="16" id="password" name="password" placeholder="Enter your password" required>
                         <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-Enter your password" required>
+                        <input type="password" maxlength="16" id="confirmPassword" name="confirmPassword" placeholder="Re-Enter your password" required>
                         <span id="match-Error"></span>
 
                     </div>

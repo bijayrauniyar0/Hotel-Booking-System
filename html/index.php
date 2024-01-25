@@ -16,7 +16,8 @@
 </head>
 <body>
 <?php require 'partials/nav.php'; ?>
-    <main>
+
+    <main style="position: relative;">
         <!-- Slide show container -->
         <div class="slideshow-container">
             <div class="mySlides">

@@ -1,3 +1,10 @@
+<?php
+$loggedin = false;
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    $loggedin=true;
+}
+echo '
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,15 +33,24 @@
                     <li><a href="../html/index.php">Home</a></li>
                     <li><a href="../html/reservations.php">Reservations</a></li>
                     <li><a href="../html/about.php">About Us</a></li>
-                    <li><a href="#contact" data-target="contact">Contact US</a></li>
-                    <li id="products"><a href="login.html">Login <i class="fa fa-caret-down"></i></a>
+                    <li><a href="#contact" data-target="contact">Contact US</a></li>';
+                    
+                    //if user is logged in then only logout option is shown
+
+                    if(!$loggedin){
+                    echo'<li id="products"><a href="../html/guest-login.php">Login <i class="fa fa-caret-down"></i></a>
                         <ul>
                             <li><a href="../html/admin-login.php">Admin Login</a></li>
                             <li><a href="../html/guest-login.php">Guest Login</a></li>
                           </ul>
                     </li>
-                    <li><a href="../html/sign-up.php">Sign Up</a></li>
-                </ul>
+                    <li><a href="../html/sign-up.php">Sign Up</a></li>';
+                    }
+                    if($loggedin){
+                    echo'<li><a href="partials/log-out.php">Log Out</a></li>';
+                    }
+                
+                echo' </ul>
             </div>
             <div class="right">
                 <div class="vertical">
@@ -43,8 +59,15 @@
                 </ul>
                 </div>
             </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
         
     </header>
+    <script src="../js/script.js""></script>
 </body>
-</html>
+</html>';
+?>

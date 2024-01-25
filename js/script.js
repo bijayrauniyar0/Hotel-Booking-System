@@ -49,7 +49,9 @@ var slideIndex = 1;
       slides[slideIndex - 1].style.display = "block";
     }
 
-//on sign up
-function redirectToIndex(){
-  window.location.href="../HTML/index.php";
-}
+    //toggle menu to make responsive
+    
+    function toggleMenu() {
+      var menu = document.querySelector(".mid ul.menu");
+      menu.classList.toggle("show");
+  }
