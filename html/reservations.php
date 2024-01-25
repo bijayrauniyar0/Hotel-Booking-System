@@ -18,7 +18,7 @@
     <title>Hotel Booking System</title>
 </head>
 <body>
-    <main>
+<main>
     <div class="suites-title">
         <h2>Suites & Rates</h2>
     </div>
@@ -29,7 +29,7 @@
         <img src="../images/villa-named.jpg" alt="Image 1" class="image" >
         <div class="content-container">
           <h2 class="rate">Nrs 5,00,000 </h2>
-          <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+          <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
         </div>
       </div>
 
@@ -39,14 +39,14 @@
         <img src="../images/pool-side-named.jpg" alt="Image 1" class="image">
         <div class="content-container">
           <h2 class="rate">Nrs 2,00,000 </h2>
-          <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+          <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
         </div>
       </div>
       <div class="private-image">
         <img src="../images/terrace-suite-named.jpg" alt="Image 1" class="image">
         <div class="content-container">
           <h2 class="rate">Nrs 1,00,000 </h2>
-          <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+          <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
           <img src="../images/honeymoon-suite.jpg" alt="Image 1" class="image">
           <div class="content-container">
             <h2 class="rate">Honeymoon Suite: &nbsp;&nbsp; Nrs 40,000 </h2>
-            <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
         </div>
     
@@ -64,7 +64,7 @@
           <img src="../images/beach-side.jpg" alt="Image 2" class="image">
           <div class="content-container">
             <h2 class="rate">Island Hut: &nbsp;&nbsp;Nrs 21,000 </h2>
-            <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
         </div>
     
@@ -72,7 +72,7 @@
           <img src="../images/private-pool.jpg" alt="Image 3" class="image">
           <div class="content-container">
             <h2 class="rate">Pool Suite: &nbsp;&nbsp;Nrs 18,000 </h2>
-            <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
           <img src="../images/super-deluxe.jpg" alt="Image 1" class="image">
           <div class="content-container">
             <h2 class="rate">Super Deluxe: &nbsp;&nbsp;Nrs 15,000 </h2>
-            <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
         </div>
     
@@ -89,7 +89,7 @@
           <img src="../images/general.jpg" alt="Image 2" class="image">
           <div class="content-container">
             <h2 class="rate">Deluxe Room: &nbsp;&nbsp;Nrs 12,000 </h2>
-            <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
         </div>
     
@@ -97,11 +97,11 @@
           <img src="../images/non-balcony.jpg" alt="Image 3" class="image">
           <div class="content-container">
             <h2 class="rate">Non-Balcony: &nbsp;&nbsp;Nrs 10,500 </h2>
-            <a href="book-now.html"><h2 class="bordered-h2">Book Now</h2></a>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
         </div>
       </div>
-    </main>
+</main>
 
     <hr>
     <section class="quarter">

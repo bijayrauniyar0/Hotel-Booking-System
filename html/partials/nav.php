@@ -16,6 +16,7 @@ echo '
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com../css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2f01e0402b.js" crossorigin="anonymous"></script>
     <title>Hotel Booking System</title>
 </head>
 <body>
@@ -38,16 +39,30 @@ echo '
                     //if user is logged in then only logout option is shown
 
                     if(!$loggedin){
-                    echo'<li id="products"><a href="../html/guest-login.php">Login <i class="fa fa-caret-down"></i></a>
+                    echo'<li id="products"><a href="../html/guest-login.php">Login <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
                         <ul>
                             <li><a href="../html/admin-login.php">Admin Login</a></li>
                             <li><a href="../html/guest-login.php">Guest Login</a></li>
                           </ul>
                     </li>
+                    <li id="products"><a href="../html/guest-login.php">
+                    <i class="fa-solid fa-user" style="font-size: 13px; margin: 0 2px 3px 0; color:rgb(66, 66, 66);"></i>   Guest   <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
+                        <ul>
+                            <li><a href="../html/guest-login.php">Login</a></li>
+                        </ul>
+                    </li>
                     <li><a href="../html/sign-up.php">Sign Up</a></li>';
                     }
                     if($loggedin){
-                    echo'<li><a href="partials/log-out.php">Log Out</a></li>';
+                    echo'
+                    <li id="products"><a href="../html/guest-login.php"><i class="fa-solid fa-user" style="font-size: 13px; margin: 0 4px 3px 0; color:rgb(66, 66, 66);"></i>   User    <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
+                        <ul>
+                            <li><a href="../html/admin-login.php">Edit</a></li>
+                            <li><a href="partials/log-out.php">Log Out</a></li>
+                        </ul>
+                    </li>';
+                    
+                    
                     }
                 
                 echo' </ul>
@@ -55,7 +70,7 @@ echo '
             <div class="right">
                 <div class="vertical">
                 <ul>
-                    <li><a href="/"><img src="../images/book-now.png" alt="booking" class="book-img"></a></li>
+                    <li><a href="../html/book-now.php"><img src="../images/book-now.png" alt="booking" class="book-img"></a></li>
                 </ul>
                 </div>
             </div>

@@ -75,7 +75,7 @@
             echo'<div id="welcome-alert" role="alert" style="">
             <h1>Success!</h1> 
             <h2 class="welcome">Welcome to Paradise Resort</h2>
-            <a href="index.php"><h2 class="welcome-ok">OK</h2></a>
+            <a href="book-now.php"><h2 class="welcome-ok">OK</h2></a>
             <div id="log-out">
                 <p class="log-out">You can logout clicking <a href="partials/log-out.php"> this link.</a></p>
             </div>
