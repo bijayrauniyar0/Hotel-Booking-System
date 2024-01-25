@@ -1,0 +1,169 @@
+<?php
+$loggedin = false;
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    $loggedin=true;
+}
+require 'partials/nav.php';
+if($loggedin){
+    echo'
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/book-now.css">
+        <title>Book Now</title>
+    </head>
+    <body>
+        <main>
+            <section id="main-booking">
+                <div class="left-space">
+                    <div class="image-holder">
+                        <div class="suites-title">
+                            <h2>Our Suites</h2>
+                        </div>
+                    <div class="rev-horizental"></div> 
+    
+                    <div class="suites-main">
+                        <div class="suites-image">
+                            <img src="../images/villa.jpg" alt="Image 1" class="image">
+                            <div class="content-container">
+                                <h2 class="rate">Villa Suite </h2>  
+                            </div>
+                        </div>
+                    
+                        <div class="suites-image">
+                        <img src="../images/pool-side.jpg" alt="Image 2" class="image">
+                        <div class="content-container">
+                            <h2 class="rate">Executive Suite</h2>
+                            
+                        </div>
+                        </div>
+                    
+                        <div class="suites-image">
+                        <img src="../images/terrace-suite.jpeg" alt="Image 3" class="image">
+                        <div class="content-container">
+                            <h2 class="rate">Terrace Suite</h2>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div class="suites-main">
+                        <div class="suites-image">
+                            <img src="../images/honeymoon-suite.jpg" alt="Image 1" class="image">
+                            <div class="content-container">
+                                <h2 class="rate">Honeymoon Suite</h2>  
+                            </div>
+                        </div>
+                    
+                        <div class="suites-image">
+                        <img src="../images/beach-side.jpg" alt="Image 2" class="image">
+                        <div class="content-container">
+                            <h2 class="rate">Island Hut</h2>
+                            
+                        </div>
+                        </div>
+                    
+                        <div class="suites-image">
+                        <img src="../images/private-pool.jpg" alt="Image 3" class="image">
+                        <div class="content-container">
+                            <h2 class="rate">Pool Suite</h2>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div class="suites-main">
+                        <div class="suites-image">
+                        <img src="../images/super-deluxe.jpg" alt="Image 1" class="image">
+                        <div class="content-container">
+                            <h2 class="rate">Super Deluxe</h2>
+                            
+                        </div>
+                        </div>
+                    
+                        <div class="suites-image">
+                        <img src="../images/general.jpg" alt="Image 2" class="image">
+                        <div class="content-container">
+                            <h2 class="rate">Deluxe Room</h2>
+                            
+                        </div>
+                        </div>
+                    
+                        <div class="suites-image">
+                        <img src="../images/non-balcony.jpg" alt="Image 3" class="image">
+                        <div class="content-container">
+                            <h2 class="rate">Non-Balcony</h2>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="right-space">
+                    <div class="book-form">
+                        <div class="form-title">
+                            <h2>Book Now</h2>
+                        </div>
+                        <div class="form-horizental"></div> 
+    
+                            <form action="#" method="POST">
+                                <div class="select-name">
+                                    <div class="form-group">
+                                        <label for="nameForBooking" class="form-margin"><p>Name for Booking</p></label>
+                                        <input type="text" class="form-control" id="nameForBooking" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="roomType" class="form-margin"><p>Select Suites</p></label>
+                                        <select class="form-drop-down" id="roomType" required>
+                                            <option value="non-balcony">Non-Balcony</option>
+                                            <option value="deluxe">Deluxe Room</option>
+                                            <option value="super-deluxe">Super Deluxe</option>
+                                            <option value="pool-suite">Pool Suite</option>
+                                            <option value="island-hut">Island Hut</option>
+                                            <option value="honeymoon-suite">Honeymoon Suite</option>
+                                            <option value="terrace-suite">Terrace Suite</option>
+                                            <option value="executive-suite">Executive Suite</option>
+                                            <option value="villa">Villa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            <div class="booking-dates">
+                                <div class="form-group">
+                                    <label for="checkInDate" class="form-margin"><p>Check In</p></label>
+                                    <input type="date" class="form-control" id="checkInDate" placeholder="Check In" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkOutDate" class="form-margin"><p>Check Out</p></label>
+                                    <input type="date" class="form-control" id="checkOutDate"  placeholder="Check Out" required>
+                                </div>
+                            </div>
+                            <div class="numbers-holder">
+                                <div class="form-group">
+                                    <label for="numberOfRooms" class="form-margin"><p>Number of Rooms</p></label>
+                                    <input type="number" class="form-control" id="numberOfRooms" value="1" min="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numberOfGuests" class="form-margin"><p>Number of Guests</p></label>
+                                    <input type="number" class="form-control" id="numberOfGuests" value="1" min="1" required>
+                                </div>
+                                </div>
+                            <input type="submit" class="booking-btn" value="Sign Up">
+                    </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+    </html>';
+}
+else{
+    echo'
+    <script>
+    alert("You are not logged in");
+    window.location.href="../HTML/guest-login.php";
+    </script>
+    ';
+}
+
+require 'partials/_footer.php';
+?>
