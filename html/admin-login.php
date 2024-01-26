@@ -12,10 +12,12 @@
         $result = mysqli_query($conn, $checkLoginDetails);
 
         if (mysqli_num_rows($result) == 1) {
+            session_start();
+            $_SESSION['adminLogin']=true;
             echo'
             <script>
                 alert("Successfully Logged In");
-                window.location.href = "../booking-data.php"; 
+                window.location.href = "../html/booking-data.php"; 
             </script>';
         }
         else {

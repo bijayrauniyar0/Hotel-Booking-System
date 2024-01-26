@@ -117,6 +117,17 @@ nav .left:hover {
   text-decoration: none;
 }
 
-nav .right .book-img {
-  height: 40px;
+nav .right img{
+  height: 35px;
+  filter: none;
+  box-shadow: 0 0 5px rgb(10, 0, 156);
+  animation: glow 1s alternate infinite;
+}
+@keyframes glow{
+  0%{
+    box-shadow:0 0 5px rgb(10, 0, 156);
+  }
+  100%{
+    box-shadow:0 0 30px rgb(10, 0, 156);
+  }
 }

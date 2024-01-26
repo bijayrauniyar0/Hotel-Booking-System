@@ -37,7 +37,7 @@
     margin: 0 0 15px 20px;
     height: 50px;
     box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.596);
-    width: 90%;
+    width: 100%;
     background-color: beige;
 }
 #last-detail{
@@ -58,4 +58,25 @@ th, td {
 }
 th {
     background-color: #f2f2f2;
+}
+
+/* profile editor */
+.user-details #editor{
+    justify-content: end;
+    align-items: end;
+
+}
+
+.full-profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.profile-pic{
+    width: 35%;
+    margin: 0 20px 0 0 ;
+}
+.profile-pic img{
+    border-radius: 10px;
+    height: 90%;
 }

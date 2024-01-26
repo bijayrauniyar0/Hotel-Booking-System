@@ -1,8 +1,74 @@
+<!-- temporary file to keep backup -->
+
+
+
+
 <?php require 'partials/nav.php'; ?>
 <?php $loggedin = false;
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
 {
     $loggedin=true;
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    
+    include 'partials/_dbconnect.php';
+    
+    $name = $_POST['bookingName'];
+    $roomType = $_POST['roomType'];
+    $checkIn = $_POST['checkIn'];
+    $checkOut= $_POST['checkOut'];
+    $numberOfRooms = $_POST['roomNumber'];
+    $numberOfGuests = $_POST['guestNumber'];
+
+    $existingBookingQuery = "SELECT * FROM bookingdetails WHERE Email = '".$_SESSION['email']."' AND CheckIn='$checkIn' AND CheckOut='$checkOut'";
+    $existingBookingResult = mysqli_query($conn, $existingBookingQuery);
+
+    if(mysqli_num_rows($existingBookingResult) > 0)
+    {
+        echo'<div id="error-alert" role="alert" style="">
+        <h2>Error!</h2> Booking already exists.
+        <button type="button" class="btn-ok"><a href="index.php">OK</a></button><br>
+       </div>';
+       echo '<script>
+        setTimeout(function() {
+            var errorAlert = document.getElementById("error-alert");
+            if (errorAlert) {
+                errorAlert.style.display = "none";
+            }
+        }, 5000);
+       </script>';
+    }
+    else
+    {
+        $sql = "SELECT * FROM users WHERE Email = '".$_SESSION['email']."'";
+
+        $result = mysqli_query($conn, $sql);
+        $num = mysqli_num_rows($result);
+        if ( $num==1) 
+        {
+            $row = mysqli_fetch_assoc($result);
+
+            $sql1 = "INSERT INTO `bookingdetails` (`Name`, `Phone`, `Email`, `NameForBooking`, `RoomType`, `CheckIn`, `CheckOut`, `NumberOfRooms`, `NumberOfGuests`) 
+            VALUES ('" . $row["Name"] . "', '" . $row["Phone"] . "', '" . $row["Email"] . "', '$name', '$roomType', '$checkIn', '$checkOut', '$numberOfRooms', '$numberOfGuests')";
+
+            $result1=mysqli_query($conn,$sql1);
+            if($result1){
+                echo'
+                <script>
+                alert("Successfully Booked");
+                </script>
+                ';
+            }
+            else{
+                echo'
+                <script>
+                alert("Error! Booking Error");
+                </script>
+                ';
+            }
+        }
+    }
 }
 
 

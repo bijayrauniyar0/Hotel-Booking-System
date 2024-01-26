@@ -16,8 +16,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
 
     $user_data = mysqli_fetch_assoc($result1);
     if($num == 0){
-        echo'
-        <h1> No Data Available</h1>';
+        $bookingHistory = false;
     }
     else{
         $bookingHistory=true;
@@ -34,8 +33,9 @@ echo'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <script src="https://kit.fontawesome.com/2f01e0402b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/editor.css">
+    <title>My Profile</title>
 </head>
 <body>
     <section id="data-container">
@@ -45,26 +45,54 @@ echo'
     <div class="profile-container">
     <div class="left-container">
         <h2 class="credentials"> Credintials </h2>
+        <div class="full-profile">
             <div class="user-details">';
             if($userdata)
             {    
-                echo '<h2 class="details-holder">Name:'.$user_data["Name"].'</h2>';
-                echo '<h2 class="details-holder">Phone:'.$user_data["Phone"].'</h2>';
-                echo '<h2 class="details-holder">Email:'.$user_data["Email"].'</h2>';
-                echo '<h2 class="details-holder">Location: '.$user_data["Address"].'</h2>';
-                echo '<h2 class="details-holder" id="last-detail">Gender:'.$user_data["Gender"].'</h2>';
+                echo '
+                <h2 class="details-holder">&nbsp&nbspName:&nbsp&nbsp'.$user_data["Name"].' 
+                <a href="#" class="profile-editor"> 
+                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;">
+                </i></a> </h2> ' ;
+
+                echo '
+                <h2 class="details-holder">&nbsp&nbspPhone:&nbsp&nbsp'.$user_data["Phone"].'
+                <a href="#" class="profile-editor"> 
+                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;">
+                </i></a> </h2> ' ;
+
+                echo '
+                <h2 class="details-holder">&nbsp&nbspEmail:&nbsp&nbsp'.$user_data["Email"].'
+                <a href="#" class="profile-editor"> 
+                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;">
+                </i> </a> </h2> ' ;
+
+                echo '
+                <h2 class="details-holder">&nbsp&nbspLocation:&nbsp&nbsp '.$user_data["Address"].'
+                <a href="#" class="profile-editor"> 
+                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;">
+                </i></a> </h2> ' ;
+
+                echo '
+                <h2 class="details-holder" id="last-detail">&nbsp&nbspGender:&nbsp&nbsp'.$user_data["Gender"].'<a href="#" class="profile-editor"> 
+                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;"></i></a> </h2> 
+                </div>' ;
             }
             
             echo'
+                <div class="profile-pic">
+                    <img src="../images/profile.jpg">
+                </div>
             </div>
     </div>
     <div class="right-container">
     <h2 class="credentials"> Booking Information</h2>
             <div class="booking-details">    
             <table>
-                <thead>
-                    
-                    <tr>
+                <thead>';
+                if($bookingHistory){
+                    $row = mysqli_fetch_assoc($result);
+                    echo'<tr>
                         <th>Name of Booking</th>
                         <th>Room Type</th>
                         <th>No of Rooms</th>
@@ -73,8 +101,8 @@ echo'
                     </tr>
                 </thead>
                 <tbody>';
-                if($bookingHistory){
-                    $row = mysqli_fetch_assoc($result);
+                
+                    
 
                     echo "<tr>";
                     echo "<td>" . $row["NameForBooking"] . "</td>";
@@ -83,6 +111,9 @@ echo'
                     echo "<td>" . $row["CheckIn"] . "</td>";
                     echo "<td>" . $row["CheckOut"] . "</td>";
                     echo "</tr>";
+                }
+                else{
+                    echo'<h2 style="font-size:3rem; text-align:center; margin-top:100px; color:beige;"> Booking Data not Available</h2>';
                 }
                 echo'</tbody>
                 </table>

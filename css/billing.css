@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+#payment-gateway {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+  
+}
+
+.left-container,.right-container {
+  width: 45%;
+  margin-top: 60px;
+}
+
+
+/* Billing card styles */
+.billing {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%; /* Full width */
+  margin: 50px auto;
+}
+
+.billing h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bill-info {
+  margin: 10px 0 32px 0;
+  font-size: 20px;
+}
+
+.bill-info label {
+  display: inline-block;
+  width: 70%;
+  font-weight: bold;
+}
+
+.bill-info span {
+  display: inline-block;
+}
+
+.total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Card details form styles */
+.card-form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(100% - 40px); /* Adjusted width to account for padding */
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+.card-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card-form input[type="text"],
+.card-form input[type="number"],
+.card-form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.card-form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
