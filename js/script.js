@@ -49,9 +49,10 @@ var slideIndex = 1;
       slides[slideIndex - 1].style.display = "block";
     }
 
-    //toggle menu to make responsive
-    
-    function toggleMenu() {
-      var menu = document.querySelector(".mid ul.menu");
-      menu.classList.toggle("show");
+// set timer
+setTimeout(function() {
+  var errorAlert = document.getElementById("error-alert");
+  if (errorAlert) {
+      errorAlert.style.display = "none";
   }
+}, 3000);

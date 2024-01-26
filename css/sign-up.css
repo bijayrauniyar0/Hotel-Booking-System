@@ -50,6 +50,7 @@ body {
     margin-bottom: 10px;
 }
 
+
 .label-group {
     display: flex;
     justify-content: space-between;
@@ -65,12 +66,16 @@ body {
     width: 100%;
 }
 
-input {
+input,#gender {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+#gender{
+    font-size: 13px;
+}
+
 
 input[type="submit"] {
     background-color: #5372F0;

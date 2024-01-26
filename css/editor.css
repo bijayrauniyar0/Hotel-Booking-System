@@ -1,0 +1,61 @@
+#data-container{
+    margin: 50px 20px 20px 20px;
+    
+}
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.my-profile{
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: rgb(52, 66, 255);
+}
+.left-container, .right-container{
+    width: 49%;
+    border-radius: 20px;
+    box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.596);
+    background-color: rgb(228, 180, 109);
+
+}
+
+.credentials{
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px 0;
+}
+.user-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.details-holder{
+    border-radius: 10px;
+    margin: 0 0 15px 20px;
+    height: 50px;
+    box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.596);
+    width: 90%;
+    background-color: beige;
+}
+#last-detail{
+    margin-bottom: 40px;
+}
+
+/* right space, booking history */
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+   
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}

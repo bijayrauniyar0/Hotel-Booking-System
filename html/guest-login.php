@@ -27,6 +27,10 @@
         else {
             $loginError = true;
         } 
+        if($_SESSION['loggedin'])
+        {
+            $_SESSION['email']=$email;
+        }
     }
 ?>
 

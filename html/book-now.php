@@ -1,17 +1,108 @@
-<?php
+<?php require 'partials/nav.php';
 $loggedin = false;
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
+{
     $loggedin=true;
 }
-require 'partials/nav.php';
-if($loggedin){
-    echo'
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    
+    include 'partials/_dbconnect.php';
+    
+    $name = $_POST['bookingName'];
+    $roomType = $_POST['roomType'];
+    $checkIn = $_POST['checkIn'];
+    $checkOut= $_POST['checkOut'];
+    $numberOfRooms = $_POST['roomNumber'];
+    $numberOfGuests = $_POST['guestNumber'];
+
+    $existingBookingQuery = "SELECT * FROM bookingdetails WHERE Email = '".$_SESSION['email']."' AND CheckIn='$checkIn' AND CheckOut='$checkOut'";
+    $existingBookingResult = mysqli_query($conn, $existingBookingQuery);
+
+    if(mysqli_num_rows($existingBookingResult) > 0)
+    {
+        echo'<div id="error-alert" role="alert" style="">
+        <h2>Error!</h2> Booking already exists.
+        <button type="button" class="btn-ok"><a href="index.php">OK</a></button><br>
+       </div>';
+       echo '<script>
+        setTimeout(function() {
+            var errorAlert = document.getElementById("error-alert");
+            if (errorAlert) {
+                errorAlert.style.display = "none";
+            }
+        }, 5000);
+       </script>';
+    }
+    else
+    {
+        $sql = "SELECT * FROM users WHERE Email = '".$_SESSION['email']."'";
+
+        $result = mysqli_query($conn, $sql);
+        $num = mysqli_num_rows($result);
+        if ( $num==1) 
+        {
+            $row = mysqli_fetch_assoc($result);
+
+            $sql1 = "INSERT INTO `bookingdetails` (`Name`, `Phone`, `Email`, `NameForBooking`, `RoomType`, `CheckIn`, `CheckOut`, `NumberOfRooms`, `NumberOfGuests`) 
+            VALUES ('" . $row["Name"] . "', '" . $row["Phone"] . "', '" . $row["Email"] . "', '$name', '$roomType', '$checkIn', '$checkOut', '$numberOfRooms', '$numberOfGuests')";
+
+            $result1=mysqli_query($conn,$sql1);
+            if($result1){
+                echo'
+                <script>
+                alert("Successfully Booked");
+                </script>
+                ';
+            }
+            else{
+                echo'
+                <script>
+                alert("Error! Booking Error");
+                </script>
+                ';
+            }
+        }
+    }
+}
+
+
+
+if(!$loggedin)
+    {
+        echo'
+        <script>
+        alert("You are not logged in");
+        window.location.href="../HTML/guest-login.php";
+        </script>
+        ';
+    }
+?>
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/book-now.css">
+        <style>
+            #error-alert{
+                text-align: center;
+                width: 30%;
+                margin: 70px auto;
+                font-size: 20px;
+                border-radius: 8px;
+                border: 1px solid rgb(218, 18, 18);
+                background-color: rgba(233, 25, 25, 0.555);
+            }
+            .btn-ok a{
+                text-decoration:none; 
+                color: white;
+            }
+            .btn-ok{
+           margin-bottom:10px;
+        }
+        </style>
         <title>Book Now</title>
     </head>
     <body>
@@ -106,15 +197,15 @@ if($loggedin){
                         </div>
                         <div class="form-horizental"></div> 
     
-                            <form action="#" method="POST">
+                            <form action="../html/book-now.php" method="POST">
                                 <div class="select-name">
                                     <div class="form-group">
                                         <label for="nameForBooking" class="form-margin"><p>Name for Booking</p></label>
-                                        <input type="text" class="form-control" id="nameForBooking" required>
+                                        <input type="text" class="form-control" name="bookingName" id="nameForBooking" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="roomType" class="form-margin"><p>Select Suites</p></label>
-                                        <select class="form-drop-down" id="roomType" required>
+                                        <select class="form-drop-down" id="roomType" name="roomType" required>
                                             <option value="non-balcony">Non-Balcony</option>
                                             <option value="deluxe">Deluxe Room</option>
                                             <option value="super-deluxe">Super Deluxe</option>
@@ -130,21 +221,21 @@ if($loggedin){
                             <div class="booking-dates">
                                 <div class="form-group">
                                     <label for="checkInDate" class="form-margin"><p>Check In</p></label>
-                                    <input type="date" class="form-control" id="checkInDate" placeholder="Check In" required>
+                                    <input type="date" class="form-control" id="checkInDate" name="checkIn" placeholder="Check In" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="checkOutDate" class="form-margin"><p>Check Out</p></label>
-                                    <input type="date" class="form-control" id="checkOutDate"  placeholder="Check Out" required>
+                                    <input type="date" class="form-control" id="checkOutDate" name="checkOut"  placeholder="Check Out" required>
                                 </div>
                             </div>
                             <div class="numbers-holder">
                                 <div class="form-group">
                                     <label for="numberOfRooms" class="form-margin"><p>Number of Rooms</p></label>
-                                    <input type="number" class="form-control" id="numberOfRooms" value="1" min="1" required>
+                                    <input type="number" class="form-control" id="numberOfRooms" value="1" min="1" name="roomNumber" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="numberOfGuests" class="form-margin"><p>Number of Guests</p></label>
-                                    <input type="number" class="form-control" id="numberOfGuests" value="1" min="1" required>
+                                    <input type="number" class="form-control" id="numberOfGuests" name="guestNumber"value="1" min="1" required>
                                 </div>
                                 </div>
                             <input type="submit" class="booking-btn" value="Sign Up">
@@ -155,15 +246,6 @@ if($loggedin){
         </main>
     </body>
     </html>';
-}
-else{
-    echo'
-    <script>
-    alert("You are not logged in");
-    window.location.href="../HTML/guest-login.php";
-    </script>
-    ';
-}
 
-require 'partials/_footer.php';
-?>
+
+<?php require 'partials/_footer.php'; ?>
