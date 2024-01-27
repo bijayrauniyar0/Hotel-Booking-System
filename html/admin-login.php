@@ -18,7 +18,7 @@
             echo'
             <script>
                 alert("Successfully Logged In");
-                window.location.href = "../html/booking-data.php"; 
+                window.location.href = "../html/admin-booking-data.php"; 
             </script>';
         }
         else {
