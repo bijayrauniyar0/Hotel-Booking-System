@@ -157,28 +157,28 @@ if(!$loggedin)
                                         </select>
                                     </div>
                                 </div>
-                            <div class="booking-dates">
-                                <div class="form-group">
-                                    <label for="checkInDate" class="form-margin"><p>Check In</p></label>
-                                    <input type="date" class="form-control" id="checkInDate" name="checkIn" placeholder="Check In" required>
+                                <div class="booking-dates">
+                                    <div class="form-group">
+                                        <label for="checkInDate" class="form-margin"><p>Check In</p></label>
+                                        <input type="date" class="form-control" id="checkInDate" name="checkIn"  placeholder="Check In" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkOutDate" class="form-margin"><p>Check Out</p></label>
+                                        <input type="date" class="form-control" id="checkOutDate" name="checkOut"  placeholder="Check Out" required>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="checkOutDate" class="form-margin"><p>Check Out</p></label>
-                                    <input type="date" class="form-control" id="checkOutDate" name="checkOut"  placeholder="Check Out" required>
-                                </div>
-                            </div>
-                            <div class="numbers-holder">
-                                <div class="form-group">
-                                    <label for="numberOfRooms" class="form-margin"><p>Number of Rooms</p></label>
-                                    <input type="number" class="form-control" id="numberOfRooms" value="1" min="1" name="roomNumber" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="numberOfGuests" class="form-margin"><p>Number of Guests</p></label>
-                                    <input type="number" class="form-control" id="numberOfGuests" name="guestNumber"value="1" min="1" required>
-                                </div>
-                                </div>
-                            <input type="submit" class="booking-btn" value="Submit">
-                    </form>
+                                <div class="numbers-holder">
+                                    <div class="form-group">
+                                        <label for="numberOfRooms" class="form-margin"><p>Number of Rooms</p></label>
+                                        <input type="number" class="form-control" id="numberOfRooms" value="1" min="1" name="roomNumber" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="numberOfGuests" class="form-margin"><p>Number of Guests</p></label>
+                                        <input type="number" class="form-control" id="numberOfGuests" name="guestNumber"value="1" min="1" required>
+                                    </div>
+                                    </div>
+                                <input type="submit" class="booking-btn" value="Submit">
+                            </form>
                     </div>
                 </div>
             </section>

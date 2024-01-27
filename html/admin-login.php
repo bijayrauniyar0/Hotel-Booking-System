@@ -1,6 +1,7 @@
 <?php 
     $login = false;
     $loginError = false;
+    session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include 'partials/_dbconnect.php';

@@ -56,3 +56,23 @@ setTimeout(function() {
       errorAlert.style.display = "none";
   }
 }, 3000);
+
+// form validation
+    function validateForm(formId) {
+        var form = document.getElementById(formId);
+        var fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+        var isValid = true;
+        
+        fields.forEach(function(field) {
+            if (!field.value) {
+                isValid = false;
+                field.classList.add('error');
+            } else {
+                field.classList.remove('error');
+            }
+        });
+
+        if (!isValid) {
+            return false; // Prevent form submission if validation fails
+        }
+    }

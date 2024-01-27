@@ -11,8 +11,6 @@ else {
     $result= mysqli_query($conn,$sql);
     $num = mysqli_num_rows($result);
 
-    $booking_data = mysqli_fetch_assoc($result);
-
 
     if($num>0){
         $data=true;
@@ -35,7 +33,7 @@ echo'
     <style>
     table {
         border-collapse: collapse;
-        width: 90%;
+        width: 98%;
         margin: 20px auto;
        
     }
@@ -61,10 +59,15 @@ echo'
             <th>Phone</th>
             <th>Email</th>
             <th>Room Type</th>
+            <th>Rate</th>
             <th>No. of Guests</th>
             <th>No of Rooms</th>
             <th>Check-in Date</th>
             <th>Checkout Date</th>
+            <th>Days</th>
+            <th>Total</th>
+            <th>VAT</th>
+            <th>Grand Total</th>
         </tr>
     </thead>
     <tbody>';
@@ -78,10 +81,15 @@ echo'
             echo "<td>" . $booking_data["Phone"] . "</td>";
             echo "<td>" . $booking_data["Email"] . "</td>";
             echo "<td>" . $booking_data["RoomType"] . "</td>";
+            echo "<td>" . $booking_data["Rate"] . "</td>";
             echo "<td>" . $booking_data["NumberOfGuests"] . "</td>";
             echo "<td>" . $booking_data["NumberOfRooms"] . "</td>";
             echo "<td>" . $booking_data["CheckIn"] . "</td>";
             echo "<td>" . $booking_data["CheckOut"] . "</td>";
+            echo "<td>" . $booking_data["Days"] . "</td>";
+            echo "<td>" . $booking_data["Total"] . "</td>";
+            echo "<td>" . $booking_data["VAT"] . "</td>";
+            echo "<td>" . $booking_data["GrandTotal"] . "</td>";
             echo "</tr>";
             echo'</tbody>';
         

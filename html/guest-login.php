@@ -1,6 +1,11 @@
 <?php 
     $loginError = false;
+    session_start();
 
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true || isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)  {
+        header("location: index.php");
+        exit;
+    }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include 'partials/_dbconnect.php';
 
@@ -16,7 +21,23 @@
                     //input password is converted into has then the hash checked from the database
                     session_start();
                     $_SESSION['loggedin']=true;
-                    header("Location: welcome.php");
+                    echo'<div id="error-alert" role="alert">
+                        <h2>Success</h2> Welcome to Paradise Resort
+                        <button type="button" class="btn-ok"><a href="index.php">OK</a></button><br>
+                    </div>';
+                    echo 
+                    '<script>
+                        setTimeout(function() {
+                            var errorAlert = document.getElementById("error-alert");
+                            if (errorAlert) {
+                                errorAlert.style.display = "none";
+                                window.location.href = "../html/index.php";
+                            }
+                        }, 4000);
+                        
+                        </script>';
+                
+
                 }
                 else{
                     $loginError=true;

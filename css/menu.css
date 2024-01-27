@@ -123,6 +123,7 @@ nav .right img{
   box-shadow: 0 0 5px rgb(10, 0, 156);
   animation: glow 1s alternate infinite;
 }
+
 @keyframes glow{
   0%{
     box-shadow:0 0 5px rgb(10, 0, 156);

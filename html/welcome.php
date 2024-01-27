@@ -1,9 +1,9 @@
 <?php
     $loginMSG = false;
-    session_start();
 
-    if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
-            header("location: guest-login.php");
+
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true || isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            header("location: admin-login.php");
             exit;
         }
     else {

@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f1f1f1;
+  background-color: #e2ebbb;
 }
 
 #payment-gateway {
@@ -15,7 +15,7 @@ body {
 
 .left-container,.right-container {
   width: 45%;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 
@@ -23,10 +23,10 @@ body {
 .billing {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.493);
   padding: 20px;
   width: 100%; /* Full width */
-  margin: 50px auto;
+  margin: 50px auto 10px;
 }
 
 .billing h2 {
@@ -49,23 +49,27 @@ body {
   display: inline-block;
 }
 
-.total {
-  margin-top: 20px;
-  text-align: right;
+.cards-title{
+  display: flex;
+  flex-direction: row;
 }
-
+.cards-title img{
+  width: 200px;
+  height: 4vh;
+  margin: 5px 0 0 16px;
+}
 /* Card details form styles */
-.card-form {
+.card-form,.cash-form {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.493);
   padding: 20px;
   width: calc(100% - 40px); /* Adjusted width to account for padding */
   margin-top: 50px;
   box-sizing: border-box;
 }
 
-.card-form label {
+.card-form label, .cash-form label {
   display: block;
   margin-bottom: 5px;
 }
@@ -81,15 +85,100 @@ body {
   box-sizing: border-box;
 }
 
-.card-form input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+
 
 .card-form input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #0349a5 !important;
+  color: white !important;
 }
+
+#end-payment{
+  width: 50%;
+}
+#end-payment .end-container{
+  width: 100%;
+  margin: auto 50% 30px;
+}
+
+#end-payment .cash-form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.493);
+  padding: 20px;
+  width: calc(100% - 40px); /* Adjusted width to account for padding */
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+.cash{
+  display: flex;
+  flex-direction: row;
+}
+.cash-form .other-pymt{
+  text-align: center;
+
+}
+.fonepay-title{
+  font-size: 14px;
+
+}
+.fone-pay{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0 0 0;
+}
+.fone-pay img{
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  width: 200px;
+  border-radius: 10px;
+}
+.radio-label {
+  cursor: pointer; 
+  display: inline-block;
+  margin-right: 20px;
+  box-shadow: 0 0 10px transparent;
+}
+.radio-label input[type="radio"] { /*selects the radio check box */
+  position: absolute;
+  left: -9999px; 
+}
+.radio-label input[type="radio"]:checked + img {
+  box-shadow: 0 0 10px rgba(131, 3, 252, 0.61); /* Change border color for selected image */
+}
+
+.cash #cash-in-hand{
+  width: 80%;
+  height: 40px;
+  border-radius: 100px;
+  margin: 18px 0 20px 0;
+  font-size: 20px;
+  
+}
+.cash h2{
+  margin-top: 20px;
+}
+
+
+
+.submit-btn{
+    width: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(96,187,70,255);
+    margin-left: 41%;
+    font-size: 1.5rem;
+    margin-bottom: auto;
+    margin-top: 10px;
+    border: 1px solid #001b01;
+    border-radius: 10px;
+    color: white;
+}
+
+.submit-btn:hover{
+  background-color: rgba(77,40,109,255);
+  color: white
+}
+
