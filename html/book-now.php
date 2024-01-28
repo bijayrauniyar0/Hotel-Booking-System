@@ -146,7 +146,7 @@ if(!$loggedin)
                                         <label for="roomType" class="form-margin"><p>Select Suites</p></label>
                                         <select class="form-drop-down" id="roomType" name="roomType" required>
                                             <option value="non-balcony">Non-Balcony</option>
-                                            <option value="deluxe">Deluxe-Room</option>
+                                            <option value="deluxe-room">Deluxe-Room</option>
                                             <option value="super-deluxe">Super-Deluxe</option>
                                             <option value="pool-suite">Pool-Suite</option>
                                             <option value="island-hut">Island-Hut</option>

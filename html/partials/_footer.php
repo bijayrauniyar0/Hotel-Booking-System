@@ -77,11 +77,11 @@
             <div class="horizental"></div> 
             <!-- design under h2 -->
 
-                <form id="contactForm" name="contact-form" action="#" method="post">
+                <form id="contactForm" name="contact-form" action="../html/partials/contact-data-sender.php" method="POST">
                     <div class="full-name">
                         <label for="name">Full Name:</label>
-                        <input type="text" id="name" name="name" placeholder="First Name"required>
-                        <input type="text" id="name" name="name" placeholder="Last Name">
+                        <input type="text" id="name" name="first-name" placeholder="First Name"required>
+                        <input type="text" id="name" name="last-name" placeholder="Last Name">
                     </div>
                     <label for="email">Your Email:</label>
                     <input type="email" id="email" name="email" required>
