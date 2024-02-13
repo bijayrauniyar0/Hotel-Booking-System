@@ -12,8 +12,7 @@
         <div class="left-section">
             <h2 class="sign-h2">A trademark of</h2>
             <div class="sign">
-                <img src="../images/sign-1.png" alt="signature">
-                <img src="../images/sign-2.png" alt="signature">
+                <img src="../images/logo.jpg" alt="signature">
             </div>
             
         </div>
@@ -95,7 +94,7 @@
         </div>
 </footer>
     <div class="end">
-    <div class="vertical-end">Copyright 2022-2025. All rights reserved</div>
+        <div class="vertical-end">Copyright 2022-2025. Created By Bijay Rauniyar</div>
     </div>
 </body>
 </html>

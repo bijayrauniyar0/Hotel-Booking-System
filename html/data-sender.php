@@ -44,6 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             VALUES 
             ('" . $row["Name"] . "', '" . $row["Phone"] . "', '" . $row["Email"] . "', '".$_SESSION["name"]."', '".$_SESSION["roomType"]."', '".$_SESSION["checkIn_date"]."', '".$_SESSION["checkOut_date"]."', '".$_SESSION["roomNumber"]."', '".$_SESSION["price"]."', '".$_SESSION["guestsNumber"]."', '".$_SESSION["days"]."', '".$_SESSION["Total"]."', '".$_SESSION["vat"]."', '".$_SESSION["grandTotal"]."')";
 
+            $_SESSION["Name"] = $row["Name"];
             $result1=mysqli_query($conn,$sql1);
             if($result1){
                 echo'
