@@ -2,7 +2,12 @@
     session_start();
     include 'partials/_dbconnect.php';
 
+    session_start();
+    include 'partials/_dbconnect.php';
+
     $loginError = false;
+
+  
 
   
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true || isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)  {
@@ -22,7 +27,7 @@
             $_SESSION['name'] = $row['Name'];
                 if(password_verify($password, $row["Password"])){ 
                     //input password is converted into has then the hash checked from the database
-            
+                    session_start();
                     $_SESSION['loggedin']=true;
                     echo'<div id="error-alert" role="alert">
                         <h2>Success</h2> Welcome to Paradise Resort
@@ -53,7 +58,7 @@
             $_SESSION['email']=$email;
             
         }
-    
+    }
 ?>
 
 <!DOCTYPE html>
@@ -117,7 +122,7 @@
                 <form id="login-form" name="myform" action="../HTML/guest-login.php" method="POST">
                     <div class="field">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                        <input type="text" id="email" name="email" placeholder="Enter your email">
                     </div>
                     <div class="field">
                         <label for="password">Password</label>
