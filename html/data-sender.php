@@ -6,6 +6,26 @@ if(!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true){
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     include 'partials/_dbconnect.php';
+
+    $createBookingTable = "CREATE TABLE IF NOT EXISTS `bookingdetails` (
+        `ID` INT AUTO_INCREMENT PRIMARY KEY,
+        `Name` VARCHAR(255),
+        `Phone` VARCHAR(20),
+        `Email` VARCHAR(255),
+        `NameForBooking` VARCHAR(255),
+        `RoomType` VARCHAR(255),
+        `CheckIn` DATE,
+        `CheckOut` DATE,
+        `NumberOfRooms` INT,
+        `Rate` INT,
+        `NumberOfGuests` INT,
+        `Days` INT,
+        `Total` INT,
+        `VAT` INT,
+        `GrandTotal` INT
+    );";
+
+    $createTableResult = mysqli_query($conn,$createBookingTable);
     
 
     $existingBookingQuery = "SELECT * FROM bookingdetails WHERE Email = '".$_SESSION['email']."' AND CheckIn='".$_SESSION["checkIn_date"]."' AND CheckOut='".$_SESSION["checkOut_date"]."'";
@@ -44,6 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             VALUES 
             ('" . $row["Name"] . "', '" . $row["Phone"] . "', '" . $row["Email"] . "', '".$_SESSION["name"]."', '".$_SESSION["roomType"]."', '".$_SESSION["checkIn_date"]."', '".$_SESSION["checkOut_date"]."', '".$_SESSION["roomNumber"]."', '".$_SESSION["price"]."', '".$_SESSION["guestsNumber"]."', '".$_SESSION["days"]."', '".$_SESSION["Total"]."', '".$_SESSION["vat"]."', '".$_SESSION["grandTotal"]."')";
 
+            $_SESSION["Name"] = $row["Name"];
             $result1=mysqli_query($conn,$sql1);
             if($result1){
                 echo'

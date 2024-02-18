@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,25 +25,25 @@
         <div class="slideshow-container">
             <div class="mySlides">
                 <img src="../images/image1.jpg" alt="Slide 1">
-                <div class="text">Welcome to Paradise Resort</div>
+                <div class="text">Welcome to Verse Resort</div>
                 <div class="text1">Experience something magical</div>
                 <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
             </div>
             <div class="mySlides">
                 <img src="../images/suite1.jpg" alt="Slide 2">
-                <div class="text">Welcome to Paradise Resort</div>
+                <div class="text">Welcome to Verse Resort</div>
                 <div class="text1">Experience something magical</div>
                 <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
             </div>
             <div class="mySlides">
                 <img src="../images/image3.jpg" alt="Slide 2">
-                <div class="text">Welcome to Paradise Resort</div>
+                <div class="text">Welcome to Verse Resort</div>
                 <div class="text1">Experience something magical</div>
                 <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
             </div>
             <div class="mySlides">
                 <img src="../images/suite.jpeg" alt="Slide 2">
-                <div class="text">Welcome to Paradise Resort</div>
+                <div class="text">Welcome to Verse Resort</div>
                 <div class="text1">Experience something magical</div>
                 <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
             </div>

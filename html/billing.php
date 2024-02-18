@@ -28,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       $days=1;
     }
     
-    $sql1= "SELECT * FROM roomprices WHERE RoomType = '".$_SESSION['roomType']."'";
+    $sql1= "SELECT * FROM roomprices WHERE room_type = '".$_SESSION['roomType']."'";
     $result1= mysqli_query($conn,$sql1);
     $row1 = mysqli_fetch_assoc($result1);
-    $_SESSION['price']= $row1["Prices"];
+    $_SESSION['price']= $row1["price"];
 
       $_SESSION['Total'] = $_SESSION['roomNumber']* $_SESSION['price'] * $days; 
       $_SESSION['vat'] = $_SESSION['Total'] * 0.13;

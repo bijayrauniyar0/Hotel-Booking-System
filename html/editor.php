@@ -1,4 +1,5 @@
 <?php require "partials/nav.php";
+session_start();
 $bookingHistory = false;
 $userdata=false;
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
@@ -91,7 +92,7 @@ echo'
             <table>
                 <thead>';
                 if($bookingHistory){
-                    $row = mysqli_fetch_assoc($result);
+                    
                     echo'<tr>
                         <th>Name of Booking</th>
                         <th>Room Type</th>
@@ -102,7 +103,7 @@ echo'
                 </thead>
                 <tbody>';
                 
-                    
+                    while($row = mysqli_fetch_assoc($result)){
 
                     echo "<tr>";
                     echo "<td>" . $row["NameForBooking"] . "</td>";
@@ -111,6 +112,7 @@ echo'
                     echo "<td>" . $row["CheckIn"] . "</td>";
                     echo "<td>" . $row["CheckOut"] . "</td>";
                     echo "</tr>";
+                    }
                 }
                 else{
                     echo'<h2 style="font-size:3rem; text-align:center; margin-top:100px; color:beige;"> Booking Data not Available</h2>';

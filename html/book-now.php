@@ -1,4 +1,6 @@
-<?php require 'partials/nav.php'; ?>
+<?php require 'partials/nav.php'; 
+session_start();
+?>
 <?php $loggedin = false;
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
 {

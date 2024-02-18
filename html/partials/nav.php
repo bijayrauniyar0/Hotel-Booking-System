@@ -1,7 +1,7 @@
 <?php
 $loggedin = false;
 $adminLogin=false;
-session_start();
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $loggedin=true;
 }
@@ -30,7 +30,7 @@ echo '
             <div class="left">
                 <ul>
                     <li>
-                        <a href="index.php">Paradise Resort</a>
+                        <a href="index.php">Verse Resort</a>
                     </li>
                 </ul>
             </div>
@@ -45,23 +45,19 @@ echo '
 
                     if(!$loggedin){
                         if(!$adminLogin){
-                    echo'<li id="products"><a href="../html/guest-login.php">Login <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
-                        <ul>
-                            <li><a href="../html/admin-login.php">Admin Login</a></li>
-                            <li><a href="../html/guest-login.php">Guest Login</a></li>
-                          </ul>
-                    </li>
+                    echo'
                     <li id="products"><a href="../html/guest-login.php">
                     <i class="fa-solid fa-user" style="font-size: 13px; margin: 0 2px 3px 0; color:rgb(66, 66, 66);"></i>   Guest   <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
                         <ul>
-                            <li><a href="../html/guest-login.php">Login</a></li>
+                        <li><a href="../html/admin-login.php">Admin Login</a></li>
+                        <li><a href="../html/guest-login.php">Guest Login</a></li>
                         </ul>
                     </li>
                     <li><a href="../html/sign-up.php">Sign Up</a></li>';
                     }}
                     if($loggedin==true && $adminLogin==false){
                     echo'
-                    <li id="products"><a href="../html/guest-login.php"><i class="fa-solid fa-user" style="font-size: 13px; margin: 0 4px 3px 0; color:rgb(66, 66, 66);"></i>   User    <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
+                    <li id="products"><a href="../html/guest-login.php"><i class="fa-solid fa-user" style="font-size: 13px; margin: 0 4px 3px 0; color:rgb(66, 66, 66);"></i>'.$_SESSION['name'].'<i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
                         <ul>
                         <li><a href="../html/editor.php">My Profile</a></li>
                          <li><a href="partials/log-out.php">Log Out</a></li>

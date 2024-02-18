@@ -32,6 +32,16 @@ footer{
   
   .left-section .sign{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-section .sign img{
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 7px;
+
   }
   
     
@@ -207,7 +217,8 @@ footer{
   .vertical-end {
     text-align: center;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 500;
     margin: 0;
     background-color:#000129;
   }

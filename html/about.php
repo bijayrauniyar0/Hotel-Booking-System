@@ -20,13 +20,13 @@
                 <div class="left-container">
                     <div class="about-content">
 
-                        <h1>Welcome to Paradise Resort</h1>
-                        <p>Discover an oasis of tranquility at Paradise Resort. Established in [Year], our resort is a symbol of luxury and relaxation. Our mission is to provide a seamless blend of comfort, sustainability, and exceptional service.</p>
+                        <h1>Welcome to Verse Resort</h1>
+                        <p>Discover an oasis of tranquility at Paradise Resort. Established in 2023, our resort is a symbol of luxury and relaxation. Our mission is to provide a seamless blend of comfort, sustainability, and exceptional service.</p>
 
                         <br>
 
                         <h2>About Us </h2>
-                        <p>Paradise Resort offers elegant accommodations, stunning views, and a commitment to environmental responsibility. Our team is dedicated to ensuring a personalized and memorable experience for every guest.</p>
+                        <p>Verse Resort offers elegant accommodations, stunning views, and a commitment to environmental responsibility. Our team is dedicated to ensuring a personalized and memorable experience for every guest.</p>
 
                         <br>
 
@@ -40,7 +40,7 @@
 
                         <br>
                         
-                        <h2>Join Us in Paradise</h2>
+                        <h2>Join Us in Verse</h2>
                         <p>Whether you're seeking a romantic escape, family vacation, or corporate retreat, Paradise Resort welcomes you to indulge in the perfect balance of luxury and adventure. Your journey to unforgettable bliss begins here.</p>
                         
                         <br>

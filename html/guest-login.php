@@ -1,13 +1,15 @@
 <?php 
-    $loginError = false;
     session_start();
+    include 'partials/_dbconnect.php';
 
+    $loginError = false;
+
+  
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true || isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)  {
         header("location: index.php");
         exit;
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        include 'partials/_dbconnect.php';
 
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -16,10 +18,11 @@
         $result = mysqli_query($conn, $sql);
         $num = mysqli_num_rows($result);
         if ( $num == 1) {
-            while($row = mysqli_fetch_assoc($result)){
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['name'] = $row['Name'];
                 if(password_verify($password, $row["Password"])){ 
                     //input password is converted into has then the hash checked from the database
-                    session_start();
+            
                     $_SESSION['loggedin']=true;
                     echo'<div id="error-alert" role="alert">
                         <h2>Success</h2> Welcome to Paradise Resort
@@ -45,14 +48,12 @@
             }
 
         }
-        else {
-            $loginError = true;
-        } 
         if($_SESSION['loggedin'])
         {
             $_SESSION['email']=$email;
+            
         }
-    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -116,7 +117,7 @@
                 <form id="login-form" name="myform" action="../HTML/guest-login.php" method="POST">
                     <div class="field">
                         <label for="email">Email Address</label>
-                        <input type="text" id="email" name="email" placeholder="Enter your email">
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
                     </div>
                     <div class="field">
                         <label for="password">Password</label>

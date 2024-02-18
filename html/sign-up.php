@@ -8,6 +8,18 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include 'partials/_dbconnect.php';
 
+        $createTableSql = "CREATE TABLE IF NOT EXISTS `users` (
+            `ID` INT AUTO_INCREMENT PRIMARY KEY,
+            `Name` VARCHAR(255),
+            `Phone` VARCHAR(20),
+            `Gender` VARCHAR(10),
+            `Address` VARCHAR(255),
+            `Email` VARCHAR(255),
+            `Password` VARCHAR(255),
+            `dt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );";
+        $resultTable = mysqli_query($conn,$createTableSql);
+
         $name = $_POST["fullName"];
         $phoneNumber = $_POST["phoneNumber"];
         $Gender = $_POST["gender"];
