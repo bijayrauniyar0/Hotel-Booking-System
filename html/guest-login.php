@@ -58,7 +58,6 @@
             $_SESSION['email']=$email;
             
         }
-    }
 ?>
 
 <!DOCTYPE html>
