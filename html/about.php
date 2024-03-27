@@ -14,7 +14,7 @@
     <title>Hotel Booking System</title>
 </head>
 <body>
-<!-- about section -->
+<!-- about section  comments-->
         <main>
             <section class="about-us-content">
                 <div class="left-container">
