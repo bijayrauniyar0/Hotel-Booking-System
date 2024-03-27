@@ -1,5 +1,7 @@
 <?php require 'partials/nav.php'; 
+
 session_start();
+include 'partials/_dbconnect.php';
 ?>
 <?php $loggedin = false;
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
@@ -147,15 +149,13 @@ if(!$loggedin)
                                     <div class="form-group">
                                         <label for="roomType" class="form-margin"><p>Select Suites</p></label>
                                         <select class="form-drop-down" id="roomType" name="roomType" required>
-                                            <option value="non-balcony">Non-Balcony</option>
-                                            <option value="deluxe-room">Deluxe-Room</option>
-                                            <option value="super-deluxe">Super-Deluxe</option>
-                                            <option value="pool-suite">Pool-Suite</option>
-                                            <option value="island-hut">Island-Hut</option>
-                                            <option value="honeymoon-suite">Honeymoon-Suite</option>
-                                            <option value="terrace-suite">Terrace-Suite</option>
-                                            <option value="executive-suite">Executive-Suite</option>
-                                            <option value="villa">Villa</option>
+                                            <?php 
+                                                $sql = "SELECT * FROM `roomprices`";
+                                                $result = mysqli_query($conn, $sql);
+                                                while($row = mysqli_fetch_assoc($result)){
+                                                    echo '<option value="'.$row['room_name'].'">'.$row['room_name'].'</option>';
+                                                }
+                                                ?>
                                         </select>
                                     </div>
                                 </div>

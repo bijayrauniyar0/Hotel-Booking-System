@@ -72,11 +72,3 @@ th {
     flex-direction: row;
     justify-content: space-between;
 }
-.profile-pic{
-    width: 35%;
-    margin: 0 20px 0 0 ;
-}
-.profile-pic img{
-    border-radius: 10px;
-    height: 90%;
-}

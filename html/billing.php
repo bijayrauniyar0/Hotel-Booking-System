@@ -28,12 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       $days=1;
     }
     
-    $sql1= "SELECT * FROM roomprices WHERE room_type = '".$_SESSION['roomType']."'";
+    $sql1= "SELECT * FROM roomprices WHERE room_name = '".$_SESSION['roomType']."'";
     $result1= mysqli_query($conn,$sql1);
     $row1 = mysqli_fetch_assoc($result1);
-    $_SESSION['price']= $row1["price"];
+    $_SESSION['price']= $row1["room_rate"];
 
-      $_SESSION['Total'] = $_SESSION['roomNumber']* $_SESSION['price'] * $days; 
+      $_SESSION['Total'] = $_SESSION['roomNumber'] * $_SESSION['price'] * $days; 
       $_SESSION['vat'] = $_SESSION['Total'] * 0.13;
       $_SESSION['grandTotal'] = $_SESSION['Total'] + $_SESSION['vat'];
       $_SESSION['days']=$days;
@@ -68,11 +68,11 @@ echo'
       </div>
       <div class="bill-info">
         <label for="rooms">Number of Rooms:</label>
-        <span>Nrs&nbsp;&nbsp; '.$_SESSION['roomNumber'].'</span>
+        <span>&nbsp;&nbsp; '.$_SESSION['roomNumber'].'</span>
       </div>
       <div class="bill-info">
         <label for="days">Number of Days:</label>
-        <span>Nrs &nbsp;&nbsp;'.$_SESSION['days'].'</span>
+        <span>&nbsp;&nbsp;'.$_SESSION['days'].'</span>
       </div>
       <div class="bill-info">
         <label for="total">Total:</label>
@@ -91,32 +91,7 @@ echo'
     </div>
     </div>
 
-    <div class="right-container">
-    <div class="card-form">
-        <div class="cards-title">
-          <h2>Enter Card Details</h2>
-          <img src="../images/cards-new.png" alt="">
-        </div><br>
-      <form action="data-sender.php" method="POST" onsubmit="return validateForm("card-form")">
-
-          <label for="card-number">Card Number</label>
-          <input type="text" id="card-number" name="card-number" placeholder="Card Number" required>
-          <label for="card-holder">Card Holder Name</label>
-          <input type="text" id="card-holder" name="card-holder" placeholder="Card Holder Name" required>
-          <label for="expiry-date">Expiry Date</label>
-          <input type="date" id="expiry-date" name="expiry-date" required>
-          <label for="cvv">CVV</label>
-          <input type="number" id="cvv" name="cvv" placeholder="CVV" required>
-          <input type="submit" class="submit-btn" value="Submit">
-
-      </form>
-      </div>
-    </div>
-    
-        
-    
-  </section>
-  <section id="end-payment">
+    <div class="right-container" id="end-payment">
         <div class="end-container">
         <div class="cash-form">
           <h2 class="other-pymt">Other Payment Options</h2><br>
@@ -149,7 +124,13 @@ echo'
           </div>
         </div>
           </div>
-          </section>
+
+    </div>
+    
+        
+    
+  </section>
+  
 
   
   </main>

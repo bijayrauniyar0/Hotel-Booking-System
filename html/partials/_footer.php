@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/footer.css">
 <footer>
             <div class="other-links">
                 <div class="left-footer">

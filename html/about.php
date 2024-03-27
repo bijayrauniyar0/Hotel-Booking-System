@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="right-container">
-                    <img src="../images/resort-top-view.jpg" alt="">
+                    <img src="../images/resort.jpg" alt="">
                 </div>
             </section>
         </main>

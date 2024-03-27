@@ -2,13 +2,7 @@
     session_start();
     include 'partials/_dbconnect.php';
 
-    session_start();
-    include 'partials/_dbconnect.php';
-
     $loginError = false;
-
-  
-
   
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true || isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)  {
         header("location: index.php");

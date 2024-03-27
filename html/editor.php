@@ -81,9 +81,6 @@ echo'
             }
             
             echo'
-                <div class="profile-pic">
-                    <img src="../images/profile.jpg">
-                </div>
             </div>
     </div>
     <div class="right-container">
