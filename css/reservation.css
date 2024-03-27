@@ -22,9 +22,10 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.expensive-suites {
+/* .expensive-suites {
   display: flex;
   display: row;
   justify-content: space-around;
@@ -64,11 +65,11 @@ body {
   width: 100%;
   height: 250px;
   
-}
+} */
 .suites-image {
-  width: 400px;
+  width: 350px;
   text-align: center;
-  margin: 20px;
+  margin: 20px 30px;
 }
 
 .suites-image img, .expensive-suites img{
@@ -85,7 +86,7 @@ body {
 
 
 h2{
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .bordered-h2 {

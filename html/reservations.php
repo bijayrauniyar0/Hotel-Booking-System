@@ -1,4 +1,6 @@
-<?php require 'partials/nav.php'; ?>
+<?php require 'partials/nav.php'; 
+require 'partials/_dbconnect.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,44 +25,55 @@
         <h2>Suites & Rates</h2>
     </div>
     <div class="rev-horizental"></div> 
-    <div class="expensive-suites">
-    <div class="villa">
-      <div class="villa-image">
-        <img src="../images/villa-named.jpg" alt="Image 1" class="image" >
-        <div class="content-container">
-          <h2 class="rate">Nrs 5,00,000 </h2>
-          <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
-        </div>
-      </div>
-
-    </div>
-    <div class="presidental-private-suites">
-      <div class="private-image">
-        <img src="../images/pool-side-named.jpg" alt="Image 1" class="image">
-        <div class="content-container">
-          <h2 class="rate">Nrs 2,00,000 </h2>
-          <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
-        </div>
-      </div>
-      <div class="private-image">
-        <img src="../images/terrace-suite-named.jpg" alt="Image 1" class="image">
-        <div class="content-container">
-          <h2 class="rate">Nrs 1,00,000 </h2>
-          <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="suites-main">
-        <div class="suites-image">
-          <img src="../images/honeymoon-suite.jpg" alt="Image 1" class="image">
+    <!-- <div class="expensive-suites">
+      <div class="villa">
+        <div class="villa-image">
+          <img src="../images/villa-named.jpg" alt="Image 1" class="image" >
           <div class="content-container">
-            <h2 class="rate">Honeymoon Suite: &nbsp;&nbsp; Nrs 40,000 </h2>
+            <h2 class="rate">Nrs 5,00,000 </h2>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="presidental-private-suites">
+        <div class="private-image">
+          <img src="../images/pool-side-named.jpg" alt="Image 1" class="image">
+          <div class="content-container">
+            <h2 class="rate">Nrs 2,00,000 </h2>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
+          </div>
+        </div>
+        <div class="private-image">
+          <img src="../images/terrace-suite-named.jpg" alt="Image 1" class="image">
+          <div class="content-container">
+            <h2 class="rate">Nrs 1,00,000 </h2>
+            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <?php 
+    $sql2 = "SELECT * FROM `roomprices`";
+    $result2 = mysqli_query($conn, $sql2);
+    echo'
+    <div class="suites-main">';
+    while($row2 = mysqli_fetch_assoc($result2)){
+      
+        echo '
+        <div class="suites-image">
+          <img src="../images/rooms/'.$row2['image'].'" alt="Image 1" class="image">
+          <div class="content-container">
+            <h2 class="rate">'.$row2['room_name'].': &nbsp; '.$row2['room_rate'].'</h2>
             <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
         </div>
     
-        <div class="suites-image">
+        ';}
+
+    echo '</div>';
+    ?>
+    <!-- <div class="suites-image">
           <img src="../images/beach-side.jpg" alt="Image 2" class="image">
           <div class="content-container">
             <h2 class="rate">Island Hut: &nbsp;&nbsp;Nrs 21,000 </h2>
@@ -74,9 +87,8 @@
             <h2 class="rate">Pool Suite: &nbsp;&nbsp;Nrs 18,000 </h2>
             <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
-        </div>
-      </div>
-    <div class="suites-main">
+        </div>  -->
+    <!-- <div class="suites-main">
         <div class="suites-image">
           <img src="../images/super-deluxe.jpg" alt="Image 1" class="image">
           <div class="content-container">
@@ -100,7 +112,7 @@
             <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
           </div>
         </div>
-      </div>
+    </div> -->
 </main>
 
     <hr>

@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include 'partials/_dbconnect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,31 +24,19 @@ session_start();
     <main style="position: relative;">
         <!-- Slide show container -->
         <div class="slideshow-container">
-            <div class="mySlides">
-                <img src="../images/image1.jpg" alt="Slide 1">
-                <div class="text">Welcome to Verse Resort</div>
-                <div class="text1">Experience something magical</div>
-                <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
-            </div>
-            <div class="mySlides">
-                <img src="../images/suite1.jpg" alt="Slide 2">
-                <div class="text">Welcome to Verse Resort</div>
-                <div class="text1">Experience something magical</div>
-                <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
-            </div>
-            <div class="mySlides">
-                <img src="../images/image3.jpg" alt="Slide 2">
-                <div class="text">Welcome to Verse Resort</div>
-                <div class="text1">Experience something magical</div>
-                <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
-            </div>
-            <div class="mySlides">
-                <img src="../images/suite.jpeg" alt="Slide 2">
-                <div class="text">Welcome to Verse Resort</div>
-                <div class="text1">Experience something magical</div>
-                <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
-            </div>
-
+            <?php 
+            $sql = "SELECT * FROM `roomprices`";
+            $result = mysqli_query($conn, $sql);
+            while($row = mysqli_fetch_assoc($result)){
+                echo'
+                
+                <div class="mySlides">
+                    <img src="../images/rooms/'.$row['image'].'" alt="Slide 1">
+                    <div class="text">Welcome to Verse Resort</div>
+                    <div class="text1">Experience something magical</div>
+                    <div class="imgBook"><a href="reservations.php"><img src="../images/book-now.png" alt=""></a></div>
+                </div>
+            ';} ?>
             <!-- Navigation buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -65,70 +54,41 @@ session_start();
 
         <div class="image-container">
             <div class="image-box">
-                <img src="../images/conference.jpg" alt="Image Description">
+                <img src="../images/facilities/conference.jpg" alt="Image Description">
                 <div class="content-container">
                     <h2 class="label-img">Conference</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
                 </div>
             </div>
             <div class="image-box">
-                <img src="../images/gym.jpg" alt="Image Description">
+                <img src="../images/facilities/gym.jpg" alt="Image Description">
                 <div class="content-container">
                     <h2 class="label-img">GYM</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
                 </div>
             </div>
             <div class="image-box">
-                <img src="../images/swimming-pool.jpg" alt="Image Description">
+                <img src="../images/facilities/swimming-pool.jpg" alt="Image Description">
                 <div class="content-container">
                     <h2 class="label-img">Swimming Pool</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
                 </div>
             </div>
         </div>
         <div class="image-container">
             <div class="image-box">
-                <img src="../images/dininghall.jpg" alt="Image Description" class="dining">
+                <img src="../images/facilities/dininghall.jpg" alt="Image Description" class="dining">
                 <div class="content-container">
                     <h2 class="label-img">Dining Hall</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
                 </div>
             </div>
             <div class="image-box">
-                <img src="../images/wifi.jpg" alt="Image Description">
-                <div class="content-container">
-                    <h2 class="label-img">Fast Wifi</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-                </div>
-            </div>
-            <div class="image-box">
-                <img src="../images/banquet-hall.jpg" alt="Image Description">
+                <img src="../images/facilities/banquet-hall.jpg" alt="Image Description">
                 <div class="content-container">
                     <h2 class="label-img">Banquet Hall</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-                </div>
-            </div>
-        </div>
-        <div class="image-container">
-            <div class="image-box">
-                <img src="../images/shower.jpg" alt="Image Description" class="last-img">
-                <div class="content-container">
-                    <h2 class="label-img">Hot Water</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
                 </div>
             </div>
             <div class="image-box">
-                <img src="../images/air-conditioner.jpg" alt="Image Description" class="last-img">
-                <div class="content-container">
-                    <h2 class="label-img">Air Conditioner</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-                </div>
-            </div>
-            <div class="image-box">
-                <img src="../images/kids-zone.jpg" alt="Image Description" class="last-img">
+                <img src="../images/facilities/kids-zone.jpg" alt="Image Description" class="last-img">
                 <div class="content-container">
                     <h2 class="label-img">Kids Zone</h2>
-                    <a href="#"><h2 class="bordered-h2">Read More</h2></a>
                 </div>
             </div>
         </div>
