@@ -105,11 +105,13 @@ hr{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .image-box {
   width: 380px;
   text-align: center;
   margin: 15px 20px;
+  flex-shrink: 0;
 }
 
 .image-box img{
@@ -135,4 +137,67 @@ hr{
   flex-direction: row;
   justify-content: space-around;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 992px){
+  .mySlides .text {
+    font-size: 2rem;
+    height: 50px;
+    top: 28%;
+  }
+  .mySlides .text1 {
+    font-size: 1.2rem;
+    height: 50px;
+    top: 38%;
+  }
+  .mySlides .imgBook {
+    top: 50%;
+  }
+  .imgBook img {
+    width: 150px;
+
+  }
+}
+@media screen and (max-width: 576px){
+  
+  .mySlides .text {
+    font-size: 1.4rem;
+    height: 50px;
+    top: 28%;
+  }
+  .mySlides .text1 {
+    font-size: 0.8rem;
+    height: 50px;
+    top: 38%;
+  }
+  .mySlides .imgBook {
+    top: 50%;
+  }
+  .imgBook img {
+    width: 120px;
+
+  }
+  .image-box {
+    width: 280px;
+    text-align: center;
+    margin: 15px 0px;
+    flex-shrink: 0;
+  }
+  .image-box img{
+    object-fit: cover;
+  }
+  .facilities h2{
+    margin: 20px 0 0 50px;
+    font-size: 1.4rem;
+    color: black;
+    
+  }
+  .quarter .horizental{
+    height: 4px;
+    width: 150px;
+    background: rgb(44, 28, 187); 
+    margin: 3px 0px 0px 60px;
+  }
+  
+  
 }

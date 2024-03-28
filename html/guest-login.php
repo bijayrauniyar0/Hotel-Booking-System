@@ -23,34 +23,23 @@
                     //input password is converted into has then the hash checked from the database
                     session_start();
                     $_SESSION['loggedin']=true;
-                    echo'<div id="error-alert" role="alert">
-                        <h2>Success</h2> Welcome to Paradise Resort
-                        <button type="button" class="btn-ok"><a href="index.php">OK</a></button><br>
-                    </div>';
+                    $_SESSION['email']=$email;
                     echo 
                     '<script>
-                        setTimeout(function() {
-                            var errorAlert = document.getElementById("error-alert");
-                            if (errorAlert) {
-                                errorAlert.style.display = "none";
-                                window.location.href = "../html/index.php";
-                            }
-                        }, 4000);
-                        
-                        </script>';
+                       alert("Success! Welcome to Verse Resort")
+                       window.location.href="index.php";
+                    </script>';
                 
 
                 }
                 else{
-                    $loginError=true;
+                    echo 
+                    '<script>
+                       alert("Error! Invalid Credentials")
+                    </script>';
                 }
             }
 
-        }
-        if($_SESSION['loggedin'])
-        {
-            $_SESSION['email']=$email;
-            
         }
 ?>
 
@@ -91,16 +80,6 @@
 <body>
 <?php require 'partials/nav.php'; ?>
 
-<?php
-    if($loginError){
-        echo'<div id="error-alert" role="alert" >
-        <h2>Error!</h2> Invalid Credentials 
-        <button type="button" class="btn-ok"><a href="guest-login.php">OK</a></button><br>
-        <p class="sign-up">Not a member! <a href="sign-up.php">Sign Up</a></p>
-        
-    </div>';
-    }
-?>
     <section class="main-block">
         <div class="form-container">
             <div class="wrapper">
@@ -129,7 +108,6 @@
         </div>
     </section>
     
-<?php require 'partials/_footer.php'; ?>
 <script src="../js/login.js"></script>
 </body>
 </html>

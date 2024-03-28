@@ -38,7 +38,6 @@ echo '
                 <ul>
                     <li><a href="../html/index.php">Home</a></li>
                     <li><a href="../html/reservations.php">Reservations</a></li>
-                    <li><a href="../html/about.php">About Us</a></li>
                     <li><a href="#contact" data-target="contact">Contact US</a></li>';
                     
                     //if user is logged in then only logout option is shown
@@ -46,7 +45,7 @@ echo '
                     if(!$loggedin){
                         if(!$adminLogin){
                     echo'
-                    <li id="products"><a href="../html/guest-login.php">
+                    <li id="products"><a>
                     <i class="fa-solid fa-user" style="font-size: 13px; margin: 0 2px 3px 0; color:rgb(66, 66, 66);"></i>   Guest   <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
                         <ul>
                         <li><a href="../html/admin-login.php">Admin Login</a></li>
@@ -57,7 +56,7 @@ echo '
                     }}
                     if($loggedin==true && $adminLogin==false){
                     echo'
-                    <li id="products"><a href="../html/guest-login.php"><i class="fa-solid fa-user" style="font-size: 13px; margin: 0 4px 3px 0; color:rgb(66, 66, 66);"></i>'.$_SESSION['name'].'<i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
+                    <li id="products"><a><i class="fa-solid fa-user" style="font-size: 13px; margin: 0 4px 3px 0; color:rgb(66, 66, 66);"></i>'.$_SESSION['name'].'<i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
                         <ul>
                         <li><a href="../html/editor.php">My Profile</a></li>
                          <li><a href="partials/log-out.php">Log Out</a></li>
@@ -77,11 +76,62 @@ echo '
                     <li><a href="../html/book-now.php"><img src="../images/book-now.png" alt="booking" class="book-img"></a></li>
                 </ul>
                 </div>
+            </div>';
+            ?>
+            <!-- drop menu -->
+            <div class="toggler">
+                <i class="fa-solid fa-bars"></i>
             </div>
+            <div class="dropMenu">
+                <ol>
+                    <?php
+                    echo'
+                        <li><a href="../html/index.php">Home</a></li>
+                        <li><a href="../html/reservations.php">Reservations</a></li>
+                        <li><a href="#contact" data-target="contact">Contact US</a></li>
+                        ';
+                        if(!$loggedin){
+                            if(!$adminLogin){
+                                echo'
+                        <li id="products"><a>
+                        <i class="fa-solid fa-user" style="font-size: 13px; margin: 0 2px 3px 0; color:rgb(66, 66, 66);"></i>   Guest   <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
+                            <ul>
+                            <li><a href="../html/admin-login.php">Admin Login</a></li>
+                            <li><a href="../html/guest-login.php">Guest Login</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../html/sign-up.php">Sign Up</a></li>';}}
+                        if($loggedin==true && $adminLogin==false){
+                        echo'
+                        <li id="products"><a><i class="fa-solid fa-user" style="font-size: 13px; margin: 0 4px 3px 0; color:rgb(66, 66, 66);"></i>Bijay<i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
+                            <ul>
+                            <li><a href="../html/editor.php">My Profile</a></li>
+                            <li><a href="partials/log-out.php">Log Out</a></li>
+                            </ul>
+                        </li>';
+                        }
+                        elseif($adminLogin){
+                            echo'
+                            <li><a href="partials/log-out.php">Log Out</a></li> '; 
+                        }
+                        ?>
+                </ol>
+            </div>
+            
         </nav>
-        
     </header>
     <script src="../js/script.js""></script>
+    <script>
+        const toggler = document.querySelector('.toggler');
+        const dropMenu = document.querySelector('.dropMenu');
+        toggler.addEventListener('click', () => {
+            dropMenu.classList.toggle('active');
+            if(dropMenu.classList.contains('active')){
+                toggler.innerHTML = '<i class="fa-solid fa-times"></i>';
+            }else{
+                toggler.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+    </script>
 </body>
-</html>';
-?>
+</html>

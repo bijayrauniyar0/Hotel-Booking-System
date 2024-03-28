@@ -34,7 +34,7 @@ echo'
     table {
         border-collapse: collapse;
         width: 98%;
-        margin: 20px auto;
+        margin: 50px auto 20px;
        
     }
     th, td {
@@ -75,7 +75,7 @@ echo'
         while($booking_data = mysqli_fetch_assoc($result)){
 
             echo "<tr>";
-            echo "<td>" . $booking_data["sno"] . "</td>";
+            echo "<td>" . $booking_data["ID"] . "</td>";
             echo "<td>" . $booking_data["Name"] . "</td>";
             echo "<td>" . $booking_data["NameForBooking"] . "</td>";
             echo "<td>" . $booking_data["Phone"] . "</td>";

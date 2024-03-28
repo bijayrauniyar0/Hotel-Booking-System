@@ -45,7 +45,14 @@ nav {
   z-index: 1000; 
 
 }
-
+nav .left{
+  position: absolute;
+  left: 30px;
+}
+nav .mid{
+  position: absolute;
+  left: 22%;
+}
 nav ul {
   display: flex;
   justify-content: center;
@@ -116,7 +123,10 @@ nav .left li {
 nav .left:hover {
   text-decoration: none;
 }
-
+nav .right{
+  position: absolute;
+  right: 30px;
+}
 nav .right img{
   height: 35px;
   filter: none;
@@ -130,5 +140,77 @@ nav .right img{
   }
   100%{
     box-shadow:0 0 30px rgb(10, 0, 156);
+  }
+}
+
+.toggler{
+  position: absolute;
+  right: 30px;
+  display: none;
+}
+.toggler i{
+  font-size: 1.5rem;
+  color: black;
+}
+.dropMenu{
+  opacity: 0;
+  display: none;
+  padding: 20px 10px;
+  position: absolute;
+  right: 60px;
+  top: 60px;
+  width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  height: 0;
+  transition: height 0.2s ease-in-out;
+}
+.dropMenu ol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ol li{
+  text-align: center;
+  list-style: none;
+  padding: 10px 0;
+  width: 100%;
+}
+ol li a{
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+ol li ul{
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 75%;
+  background-color: white;
+  width: 200px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+ol li ul li{
+  text-align: center;
+  margin: 10px 0;
+}
+ol li:hover ul{
+  display: block;
+
+}
+.dropMenu.active{
+  display: block;
+  height: auto;
+  opacity: 1;
+}
+
+@media screen and (max-width: 992px){
+  nav .mid, nav .right{
+    display: none;
+  }
+  .toggler{
+    display: block;
   }
 }

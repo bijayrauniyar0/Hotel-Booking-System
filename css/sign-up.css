@@ -2,24 +2,6 @@ body {
     background-image: url(../images/resort-blur.jpg);
     background-size: cover;
 }
-#success-alert{
-    text-align: center;
-    width: 30%;
-    margin: 70px auto;
-    font-size: 20px;
-    border-radius: 8px ;
-    border: 1px solid rgb(6, 131, 58);
-    background-color: rgba(29, 219, 86, 0.432);
-}
-#error-alert{
-    text-align: center;
-    width: 30%;
-    margin: 70px auto;
-    font-size: 20px;
-    border-radius: 8px;
-    border: 1px solid rgb(218, 18, 18);
-    background-color: rgba(233, 25, 25, 0.555);
-}
 
 .wrapper {
     margin: 100px auto;
@@ -103,3 +85,12 @@ input[type="submit"]:hover {
 .sign-txt a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        margin: 120px auto;
+        width: 350px;
+    }
+    
+    
+  }

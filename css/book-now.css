@@ -7,21 +7,23 @@ body{
     justify-content: space-around;
     margin: 70px 0;
 }
-.left-space .image-holder, .right-space .book-form{
-    width: 100%;
+
+
+.right-space{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+.right-space .book-form{
+    margin-top: 30px;
+    padding: 30px 0;
+    width: 70%;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 8px; 
     background-color: beige;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.644);
 }
-.left-space{
-    width:45%;
-
-}
-.right-space{
-    width:50%;
-}
-.suites-title h2, .form-title h2{
+.form-title h2{
     font-size: 28px;
     text-align: center;
     margin: 10px 0 20px 0;
@@ -34,25 +36,16 @@ body{
     border-radius: 6px;
   
   }
-.suites-main{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-#main-booking img{
-    width:180px;
-    height:110px;
-    border-radius: 8px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.644);
-}
-#main-booking .content-container h2{
-    font-size: 14px;
-    text-align: center;
-    margin: 5px 0 0 0;
-}
 
 /* right content */
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 30px 0;
+
+}
 .book-form{
     background-image: url(../images/resort-top-view_blurred.jpg);
     background-size: cover;
@@ -67,44 +60,87 @@ body{
     border-radius: 6px;
   
 }
+.form-group{
+    margin: 5px 20px;
+}
 .form-margin{
-    margin-bottom: 30px;
+    margin-left: 20px;
 }
 
 
 #roomType, #checkInDate, #checkOutDate, #numberOfRooms, #numberOfGuests, #nameForBooking{
     font-size: 16px;
-    border-radius: 100px;
+    border-radius: 50px;
     width: 300px;
     height: 55px;
     text-align: center;
-    margin: 0 0 30px 0;
+    border:1px solid black
     
 }
 
 .numbers-holder,.booking-dates,.select-name{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
+    align-items: center;
+    width: 100%;
+
     
+}
+#btn{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 20px;
 }
 .booking-btn{
     width: auto;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(51, 135, 230);
-    margin-left: 41%;
+    background-color: rgb(44, 129, 248);
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    margin-top: 45px;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 12px 22px;
 }
 .booking-btn:hover{
     color: beige;
     background-color: rgb(79, 79, 223);
 }
 .form-group p{
-    font-size: 18px !important;
+    font-size: 18px;
     color: rgb(0, 38, 206);
 }
+@media screen and (max-width: 992px) {
+    
+    .right-space .book-form{
+        width: 90%;
+    }
+    
+  }
+@media screen and (max-width: 768px) {
+
+    #roomType, #checkInDate, #checkOutDate, #numberOfRooms, #numberOfGuests, #nameForBooking{
+        font-size: 16px;
+        width: 180px;
+
+        
+    }
+    .form-group .form-margin p{
+        font-size: 14px;
+    }
+    
+    
+  }
+  @media screen and (max-width: 576px) {
+    
+    .right-space .book-form{
+        width: 95%;
+    }
+    #roomType, #checkInDate, #checkOutDate, #numberOfRooms, #numberOfGuests, #nameForBooking{
+        font-size: 16px;
+        width: 150px;
+
+        
+    }
+    
+    
+  }

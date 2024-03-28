@@ -39,15 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
        </div>';
        echo 
        '<script>
-        setTimeout(function() {
-            var errorAlert = document.getElementById("error-alert");
-            if (errorAlert) {
-                errorAlert.style.display = "none";
-                window.location.href = "../html/index.php";
-            }
-        }, 4000);
-  
-
+            alert("Error! Booking Already Exists")
        </script>';
     }
     else
@@ -86,34 +78,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <Style>
-        .btn-ok a{
-            text-decoration:none; 
-            color: white;
-        }
-        .btn-ok{
-            margin-bottom:10px;
-            background-color: rgb(21, 190, 97);
-            border-radius: 10px;
-        }
-        #error-alert{
-            box-shadow: 5px 5px 10px rgb(238, 30, 30);
-            width: 30%;
-            margin:auto 40%;
-            text-align: center;
-            font-size: 18px;
-        }
-        
-    </Style>
-    <title>Booked</title>
-</head>
-<body>
-    
-</body>
-</html>
 

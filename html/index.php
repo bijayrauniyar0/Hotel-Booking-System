@@ -71,8 +71,6 @@ include 'partials/_dbconnect.php';
                     <h2 class="label-img">Swimming Pool</h2>
                 </div>
             </div>
-        </div>
-        <div class="image-container">
             <div class="image-box">
                 <img src="../images/facilities/dininghall.jpg" alt="Image Description" class="dining">
                 <div class="content-container">

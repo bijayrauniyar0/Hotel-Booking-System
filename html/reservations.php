@@ -25,34 +25,7 @@ require 'partials/_dbconnect.php';
         <h2>Suites & Rates</h2>
     </div>
     <div class="rev-horizental"></div> 
-    <!-- <div class="expensive-suites">
-      <div class="villa">
-        <div class="villa-image">
-          <img src="../images/villa-named.jpg" alt="Image 1" class="image" >
-          <div class="content-container">
-            <h2 class="rate">Nrs 5,00,000 </h2>
-            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
-          </div>
-        </div>
-
-      </div>
-      <div class="presidental-private-suites">
-        <div class="private-image">
-          <img src="../images/pool-side-named.jpg" alt="Image 1" class="image">
-          <div class="content-container">
-            <h2 class="rate">Nrs 2,00,000 </h2>
-            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
-          </div>
-        </div>
-        <div class="private-image">
-          <img src="../images/terrace-suite-named.jpg" alt="Image 1" class="image">
-          <div class="content-container">
-            <h2 class="rate">Nrs 1,00,000 </h2>
-            <a href="book-now.php"><h2 class="bordered-h2">Book Now</h2></a>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    
     <?php 
     $sql2 = "SELECT * FROM `roomprices`";
     $result2 = mysqli_query($conn, $sql2);
@@ -116,6 +89,7 @@ require 'partials/_dbconnect.php';
 </main>
 
     <hr>
+    
     <section class="quarter">
       <div class="facilities">
           <h2>Facilities & Services</h2>
@@ -125,74 +99,43 @@ require 'partials/_dbconnect.php';
       <!-- design under h2 -->
 
       <div class="image-container">
-          <div class="image-box">
-              <img src="../images/conference.jpg" alt="Image Description">
-              <div class="content-container">
-                  <h2 class="label-img">Conference</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-          <div class="image-box">
-              <img src="../images/gym.jpg" alt="Image Description">
-              <div class="content-container">
-                  <h2 class="label-img">GYM</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-          <div class="image-box">
-              <img src="../images/swimming-pool.jpg" alt="Image Description">
-              <div class="content-container">
-                  <h2 class="label-img">Swimming Pool</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-      </div>
-      <div class="image-container">
-          <div class="image-box">
-              <img src="../images/dininghall.jpg" alt="Image Description" class="dining">
-              <div class="content-container">
-                  <h2 class="label-img">Dining Hall</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-          <div class="image-box">
-              <img src="../images/wifi.jpg" alt="Image Description">
-              <div class="content-container">
-                  <h2 class="label-img">Fast Wifi</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-          <div class="image-box">
-              <img src="../images/banquet-hall.jpg" alt="Image Description">
-              <div class="content-container">
-                  <h2 class="label-img">Banquet Hall</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-      </div>
-      <div class="image-container">
-          <div class="image-box">
-              <img src="../images/shower.jpg" alt="Image Description" class="last-img">
-              <div class="content-container">
-                  <h2 class="label-img">Hot Water</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-          <div class="image-box">
-              <img src="../images/air-conditioner.jpg" alt="Image Description" class="last-img">
-              <div class="content-container">
-                  <h2 class="label-img">Air Conditioner</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-          <div class="image-box">
-              <img src="../images/kids-zone.jpg" alt="Image Description" class="last-img">
-              <div class="content-container">
-                  <h2 class="label-img">Kids Zone</h2>
-                  <a href="#"><h2 class="bordered-h2">Read More</h2></a>
-              </div>
-          </div>
-      </div>
+            <div class="image-box">
+                <img src="../images/facilities/conference.jpg" alt="Image Description">
+                <div class="content-container">
+                    <h2 class="label-img">Conference</h2>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="../images/facilities/gym.jpg" alt="Image Description">
+                <div class="content-container">
+                    <h2 class="label-img">GYM</h2>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="../images/facilities/swimming-pool.jpg" alt="Image Description">
+                <div class="content-container">
+                    <h2 class="label-img">Swimming Pool</h2>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="../images/facilities/dininghall.jpg" alt="Image Description" class="dining">
+                <div class="content-container">
+                    <h2 class="label-img">Dining Hall</h2>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="../images/facilities/banquet-hall.jpg" alt="Image Description">
+                <div class="content-container">
+                    <h2 class="label-img">Banquet Hall</h2>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="../images/facilities/kids-zone.jpg" alt="Image Description" class="last-img">
+                <div class="content-container">
+                    <h2 class="label-img">Kids Zone</h2>
+                </div>
+            </div>
+        </div>
   </section>
 
   <?php require 'partials/_footer.php'; ?>

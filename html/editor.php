@@ -1,11 +1,12 @@
-<?php require "partials/nav.php";
+<?php
 session_start();
-$bookingHistory = false;
-$userdata=false;
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
-{   include "partials/_dbconnect.php";
-    $loggedin=true;
+include "partials/_dbconnect.php";
 
+$bookingHistory = false;
+
+if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
+    header("location:guest:login.php");
+}
     $sql = "SELECT * FROM bookingdetails WHERE Email = '".$_SESSION['email']."'";
     $sql1= "SELECT * FROM users WHERE Email = '".$_SESSION['email']."'";
 
@@ -22,13 +23,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
     else{
         $bookingHistory=true;
     }
-    if($num1==1){
-        $userdata=true;
-    }
-}
-
-if($loggedin){
-echo'
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,55 +34,47 @@ echo'
     <title>My Profile</title>
 </head>
 <body>
+    <?php require "partials/nav.php"; ?>
+
     <section id="data-container">
     <div class="my-profile">
     <h1> My Profile </h1>
     </div>
     <div class="profile-container">
-    <div class="left-container">
-        <h2 class="credentials"> Credintials </h2>
-        <div class="full-profile">
-            <div class="user-details">';
-            if($userdata)
-            {    
-                echo '
-                <h2 class="details-holder">&nbsp&nbspName:&nbsp&nbsp'.$user_data["Name"].' 
-                <a href="#" class="profile-editor"> 
-                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;">
-                </i></a> </h2> ' ;
+        <div class="left-container">
+            <h2 class="credentials"> Credintials </h2>
+            <div class="full-profile">
+                <div class="user-details">
+                    <?php
+  
+                        echo '
+                        <h2 class="details-holder">&nbsp&nbspName:&nbsp&nbsp'.$user_data["Name"].' </h2>
+                        ' ;
 
-                echo '
-                <h2 class="details-holder">&nbsp&nbspPhone:&nbsp&nbsp'.$user_data["Phone"].'
-                <a href="#" class="profile-editor"> 
-                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;">
-                </i></a> </h2> ' ;
+                        echo '
+                        <h2 class="details-holder">&nbsp&nbspPhone:&nbsp&nbsp'.$user_data["Phone"].'</h2> ' ;
 
-                echo '
-                <h2 class="details-holder">&nbsp&nbspEmail:&nbsp&nbsp'.$user_data["Email"].'
-                <a href="#" class="profile-editor"> 
-                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;">
-                </i> </a> </h2> ' ;
+                        echo '
+                        <h2 class="details-holder">&nbsp&nbspEmail:&nbsp&nbsp'.$user_data["Email"].' </h2> ' ;
 
-                echo '
-                <h2 class="details-holder">&nbsp&nbspLocation:&nbsp&nbsp '.$user_data["Address"].'
-                <a href="#" class="profile-editor"> 
-                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;">
-                </i></a> </h2> ' ;
+                        echo '
+                        <h2 class="details-holder">&nbsp&nbspLocation:&nbsp&nbsp '.$user_data["Address"].' </h2> ' ;
 
-                echo '
-                <h2 class="details-holder" id="last-detail">&nbsp&nbspGender:&nbsp&nbsp'.$user_data["Gender"].'<a href="#" class="profile-editor"> 
-                <i class="fa-solid fa-pen-to-square" id="editor" style="color:black;"></i></a> </h2> 
-                </div>' ;
-            }
-            
-            echo'
+                        echo '
+                        <h2 class="details-holder" id="last-detail">&nbsp&nbspGender:&nbsp&nbsp'.$user_data["Gender"].' </h2> ' ;
+                    ?>
+                </div>
             </div>
-    </div>
-    <div class="right-container">
-    <h2 class="credentials"> Booking Information</h2>
+            <!-- <span class="edit-profile">
+                <button onclick="openEditor()">Edit Profile</button>
+            </span> -->
+        </div>
+        <div class="right-container">
+        <h2 class="credentials"> Booking Information</h2>
             <div class="booking-details">    
             <table>
-                <thead>';
+                <thead>
+                    <?php
                 if($bookingHistory){
                     
                     echo'<tr>
@@ -117,14 +104,10 @@ echo'
                 echo'</tbody>
                 </table>
             </div>
-    </div>
+        </div>
     </div>
     </section>
 </body>
 </html>';
 require "partials/_footer.php";
-} 
-else{
-header("location:guest:login.php");
-}
 ?>

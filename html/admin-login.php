@@ -61,7 +61,7 @@
         <div class="form-container">
         <div class="wrapper">
             <h1>Administrator</h1>
-            <form id="login-form" name="myform" action="#" method="post" onsubmit= "return validateform()">
+            <form id="login-form" name="myform" action="#" method="post">
                 <div class="field">
                     <label for="email">Email Address</label>
                     <input type="text" id="email" name="email" placeholder="Enter your email">

@@ -1,9 +1,9 @@
 <?php 
-    $successAlert = false;
-    $lengthError = false;
-    $matchError = false;
-    $phoneError = false;
-    $emailExistsError = false;
+
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        header("location: index.php");
+        exit;
+    }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include 'partials/_dbconnect.php';
@@ -38,16 +38,25 @@
         $checkEmailResult = mysqli_query($conn, $checkEmailQuery);
 
         if (mysqli_num_rows($checkEmailResult) > 0) {
-            $emailExistsError = true;
+            echo '
+                <script>
+                    alert("Error! Account Already Exists")
+                </script>';
         }
         elseif ($passwordLength < 8) {
-            $lengthError = true;
+            echo '<script>
+            alert("Error! Password Length Cannot Be Less Than 8 Characters")
+           </script>';
         } 
         elseif ($password != $cPassword) {
-            $matchError = true;
+            echo '<script>
+        alert("Error! Passwords Do Not Match")
+       </script>';
         } 
         elseif ($numberLength != 10 || !is_numeric($phoneNumber)) {
-            $phoneError = true;
+            echo '<script>
+        alert("Error! Please Enter a Valid Phone Number")
+       </script>';
         }
         elseif ($passwordLength >= 8 && $password == $cPassword && $exists == false) {
             
@@ -59,7 +68,9 @@
             $result = mysqli_query($conn, $sql);
 
             if ($result) {
-                $successAlert = true;
+                echo '<script>
+                        alert("Success! Account Created Successfully")
+                    </script>';
             }
         }
     }
@@ -80,79 +91,6 @@
 <body>
 
 <?php require 'partials/nav.php'; ?>
-
-<?php
-    if($successAlert){
-        echo'<div id="success-alert" role="alert">
-        <h2>Success!</h2> Account has been created successfully
-        <button type="button" onclick="redirectToLogIn()">OK</button>
-        </div>';
-        echo '<script>
-        setTimeout(function() {
-            var errorAlert = document.getElementById("success-alert");
-            if (errorAlert) {
-                errorAlert.style.display = "none";
-            }
-        }, 5000);
-       </script>';
-    }
-    if($emailExistsError){
-        echo'<div id="error-alert" role="alert" >
-        <h2>Error!</h2> User(Email) already exists
-        <button type="button" onclick="redirectToSignUp()">OK</button>
-    </div>';
-    echo '<script>
-        setTimeout(function() {
-            var errorAlert = document.getElementById("error-alert");
-            if (errorAlert) {
-                errorAlert.style.display = "none";
-            }
-        }, 5000);
-       </script>';
-    }
-    if($lengthError){
-        echo'<div id="error-alert" role="alert" >
-        <h2>Error!</h2> Password length cannot be less than 8
-        <button type="button" onclick="redirectToSignUp()">OK</button>
-    </div>';
-    echo '<script>
-        setTimeout(function() {
-            var errorAlert = document.getElementById("error-alert");
-            if (errorAlert) {
-                errorAlert.style.display = "none";
-            }
-        }, 5000);
-       </script>';
-    }
-    if($phoneError){
-        echo'<div id="error-alert" role="alert">
-        <h2>Error!</h2> Please enter a valid phone number
-        <button type="button" onclick="redirectToSignUp()">OK</button>
-    </div>';
-    echo '<script>
-        setTimeout(function() {
-            var errorAlert = document.getElementById("error-alert");
-            if (errorAlert) {
-                errorAlert.style.display = "none";
-            }
-        }, 5000);
-       </script>';
-    }
-    if($matchError){
-        echo'<div role="alert" style="margin-top:60px;">
-        <strong>Error!</strong> Passwords donot match
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>';
-    echo '<script>
-        setTimeout(function() {
-            var errorAlert = document.getElementById("error-alert");
-            if (errorAlert) {
-                errorAlert.style.display = "none";
-            }
-        }, 5000);
-       </script>';
-    }
-?>
 
     <section class="main-block">
         <div class="form-container">
@@ -202,11 +140,8 @@
             </div>
         </div>
     </section>
-    
-    <?php require 'partials/_footer.php'; ?>
 
 <script src="../js/login.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </body>
 </html>
