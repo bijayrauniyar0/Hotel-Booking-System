@@ -69,14 +69,17 @@ echo '
                     }
                 
                 echo' </ul>
-            </div>
-            <div class="right">
-                <div class="vertical">
-                <ul>
+            </div>';
+            if(!$adminLogin){
+            echo'<div class="right">
+            <div class="vertical">
+            <ul>
                     <li><a href="../html/book-now.php"><img src="../images/book-now.png" alt="booking" class="book-img"></a></li>
                 </ul>
                 </div>
             </div>';
+            }
+            
             ?>
             <!-- drop menu -->
             <div class="toggler">
@@ -96,7 +99,7 @@ echo '
                         <li id="products"><a>
                         <i class="fa-solid fa-user" style="font-size: 13px; margin: 0 2px 3px 0; color:rgb(66, 66, 66);"></i>   Guest   <i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
                             <ul>
-                            <li><a href="../html/admin-login.php">Admin Login</a></li>
+                            <li><a href="../html/Admin/admin-login.php">Admin Login</a></li>
                             <li><a href="../html/guest-login.php">Guest Login</a></li>
                             </ul>
                         </li>

@@ -18,7 +18,7 @@
             echo'
             <script>
                 alert("Successfully Logged In");
-                window.location.href = "../html/admin-booking-data.php"; 
+                window.location.href = "../html/Admin/check-rooms.php"; 
             </script>';
         }
         else {
@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com../css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
-    <title>Hotel Booking System</title>
+    <title>Admin Login</title>
 </head>
 <body>
 <?php require 'partials/nav.php'; ?>

@@ -2,12 +2,12 @@
 $data=false;
     session_start();
     if (!isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] != true) {
-        header("location: guest-login.php");
+        header("location: ../guest-login.php");
         exit;
     }
 else {
-    include "partials/_dbconnect.php";
-   $sql = "SELECT * FROM `bookingdetails`";
+    include "../partials/_dbconnect.php";
+    $sql = "SELECT * FROM `bookingdetails`";
     $result= mysqli_query($conn,$sql);
     $num = mysqli_num_rows($result);
 
@@ -17,19 +17,16 @@ else {
     }
 
 }
-include "partials/nav.php";
 
 if($data){
     
     
 echo'
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel"stylesheet" href="../css/booking-data.css">
     <style>
     table {
         border-collapse: collapse;
@@ -46,13 +43,16 @@ echo'
         background-color: #f2f2f2;
     }
     </style>
-    <title>Document</title>
+    <title>Booking Data</title>
 </head>
-<body>
+<body>';
 
+include "./partials/admin_nav.php";
+
+    echo'
+    <h1 style="text-align: center; margin-top: 20px;">Booking Data</h1>
     <table>
-    <thead>';
-        echo'<tr>
+    <thead><tr>
             <th>S. No.</th>
             <th>Name</th>
             <th>Name of Booking</th>
@@ -71,11 +71,12 @@ echo'
         </tr>
     </thead>
     <tbody>';
-    
+        $i=0;
         while($booking_data = mysqli_fetch_assoc($result)){
+            $i++;
 
             echo "<tr>";
-            echo "<td>" . $booking_data["ID"] . "</td>";
+            echo "<td>" . $i. "</td>";
             echo "<td>" . $booking_data["Name"] . "</td>";
             echo "<td>" . $booking_data["NameForBooking"] . "</td>";
             echo "<td>" . $booking_data["Phone"] . "</td>";

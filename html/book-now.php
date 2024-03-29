@@ -90,13 +90,13 @@ if (!$loggedin) {
                                     <label for="checkInDate" class="form-margin">
                                         <p>Check In</p>
                                     </label>
-                                    <input type="date" class="form-control" id="checkInDate" name="checkIn" placeholder="Check In" required>
+                                    <input type="date" class="form-control" id="checkInDate" name="checkIn" placeholder="Check In" onclick="setMinDate()" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="checkOutDate" class="form-margin">
                                         <p>Check Out</p>
                                     </label>
-                                    <input type="date" class="form-control" id="checkOutDate" name="checkOut" placeholder="Check Out" required>
+                                    <input type="date" class="form-control" id="checkOutDate" name="checkOut" placeholder="Check Out" onclick="setCheckOutDate()" required>
                                 </div>
                             </div>
                             <div class="numbers-holder">
@@ -122,9 +122,45 @@ if (!$loggedin) {
             </div>
         </section>
     </main>
+    <script>
+        function setMinDate() {
+    // Get today's date
+        let today = new Date();
+        
+        // Set tomorrow's date
+        let tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        // Format the date as YYYY-MM-DD
+        let tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+        
+        // Set the minimum selectable date for the input field
+        document.getElementById("checkInDate").setAttribute("min", tomorrowFormatted);
+    }
+    
+    function setCheckOutDate() {
+        // Get the value of the check-in date input field
+        var checkInDate = document.getElementById("checkInDate").value;
+        if(checkInDate === "") {
+            // If the check-in date is not set, set the minimum check-out date to today
+            let today = new Date();
+            // Set tomorrow's date
+            let tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            // Format the date as YYYY-MM-DD
+            let tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+
+            document.getElementById("checkOutDate").setAttribute("min", tomorrowFormatted);
+        }else{
+
+            document.getElementById("checkOutDate").setAttribute("min", checkInDate);
+        }
+        // Set the minimum check-out date to the check-in date
+    }
+    </script>
+    <?php require 'partials/_footer.php'; ?>
 </body>
 
-</html>';
+</html>
 
-
-<?php require 'partials/_footer.php'; ?>
