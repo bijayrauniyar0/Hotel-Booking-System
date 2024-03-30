@@ -63,6 +63,7 @@
            margin: 10px 0;
            font-size: 18px;
            cursor: pointer;
+           margin-top: 100px;
         
         }
         .chnage-btn:hover{

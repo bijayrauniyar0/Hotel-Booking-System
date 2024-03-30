@@ -5,14 +5,15 @@ $adminLogin=false;
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $loggedin=true;
+    $sql = "SELECT * FROM users WHERE Email = '" . $_SESSION['email'] . "'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
 }
 elseif(isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true){
     $adminLogin=true;
     $loggedin=false;
 }
-$sql = "SELECT * FROM users WHERE Email = '" . $_SESSION['email'] . "'";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
+
 echo '
 <!DOCTYPE html>
 <html lang="en">

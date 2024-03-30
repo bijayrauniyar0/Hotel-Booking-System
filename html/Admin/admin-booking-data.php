@@ -27,11 +27,16 @@ echo'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <style>
+    button{
+        margin: 20px 0;
+    }
     table {
         border-collapse: collapse;
         width: 98%;
         margin: 50px auto 20px;
+        overflow-x: scroll;
        
     }
     th, td {
@@ -51,7 +56,7 @@ include "./partials/admin_nav.php";
 
     echo'
     <h1 style="text-align: center; margin-top: 20px;">Booking Data</h1>
-    <table>
+    <table id="bookingData">
     <thead><tr>
             <th>S. No.</th>
             <th>Name</th>
@@ -96,6 +101,8 @@ include "./partials/admin_nav.php";
         
         }
 echo'
+<button id="download">Download</button>
+<script src="download.js"></script>
 </body>
 </html>';
 }

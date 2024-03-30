@@ -13,6 +13,10 @@
             display: flex;
             align-items: center;
             width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 11;
         }
         nav {
             display: flex;
@@ -65,7 +69,7 @@
         <h1 class="admin-title">Admin Panel</h1>
         <ul>
             <li><a href="check-rooms.php">Rooms</a></li>
-            <li><a href="">Bookings</a></li>
+            <li><a href="admin-booking-data.php">Bookings</a></li>
             <li><a href="./partials/admin_logout.php">Logout</a></li>
         </ul>
     </nav>

@@ -41,14 +41,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $existingBookingResult = mysqli_query($conn, $existingBookingQuery);
 
     if(mysqli_num_rows($existingBookingResult) > 0)
-    {
-        echo'<div id="error-alert" role="alert">
-        <h2>Error!</h2> Booking already exists.
-        <button type="button" class="btn-ok"><a href="index.php">OK</a></button><br>
-       </div>';
-       echo 
+{       echo 
        '<script>
             alert("Error! Booking Already Exists")
+            window.location.href="index.php";
        </script>';
     }
     else
@@ -92,6 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     echo '
                     <script>
                     alert("Success! Booking Confirmed");
+                    window.location.href="index.php";
                     </script>
                     ';
                 } catch (Exception $e) {

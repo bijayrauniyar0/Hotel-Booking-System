@@ -160,12 +160,12 @@ echo '
                   <div class="fonepay-title">
                       <h2>Fone Pay</h2>
                       <div class="fone-pay">
-                         <form action="billing.php" method="get">
+                         <!-- <form action="billing.php" method="get"> -->
                           <label for="khalti" class="radio-label">
                               <input type="radio" id="khalti" name="ewallet">
                               <img src="../images/khalti.png"  onclick="payment()">
                           </label>
-                          </form> 
+                          <!-- </form>  -->
                           
                           <!-- <label for="esewa" class="radio-label">
                               <input type="radio" id="esewa" name="ewallet">
