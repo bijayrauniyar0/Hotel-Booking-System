@@ -1,4 +1,5 @@
 <?php
+include 'partials/_dbconnect.php';
 $loggedin = false;
 $adminLogin=false;
 
@@ -9,6 +10,9 @@ elseif(isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true){
     $adminLogin=true;
     $loggedin=false;
 }
+$sql = "SELECT * FROM users WHERE Email = '" . $_SESSION['email'] . "'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
 echo '
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +60,7 @@ echo '
                     }}
                     if($loggedin==true && $adminLogin==false){
                     echo'
-                    <li id="products"><a><i class="fa-solid fa-user" style="font-size: 13px; margin: 0 4px 3px 0; color:rgb(66, 66, 66);"></i>'.$_SESSION['name'].'<i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
+                    <li id="products"><a><i class="fa-solid fa-user" style="font-size: 13px; margin: 0 4px 3px 0; color:rgb(66, 66, 66);"></i>'.$row['Name'].'<i class="fa fa-caret-down" style="font-size: 13px; margin: 0 0 3px 4px; color:rgb(66, 66, 66);"></i></a>
                         <ul>
                         <li><a href="../html/editor.php">My Profile</a></li>
                          <li><a href="partials/log-out.php">Log Out</a></li>

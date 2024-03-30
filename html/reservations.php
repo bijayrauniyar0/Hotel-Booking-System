@@ -1,4 +1,5 @@
-<?php require 'partials/nav.php'; 
+<?php 
+session_start();
 require 'partials/_dbconnect.php';
 ?>
 
@@ -20,6 +21,7 @@ require 'partials/_dbconnect.php';
     <title>Hotel Booking System</title>
 </head>
 <body>
+  <?php require 'partials/nav.php'; ?>
 <main>
     <div class="suites-title">
         <h2>Suites & Rates</h2>
@@ -32,7 +34,7 @@ require 'partials/_dbconnect.php';
     echo'
     <div class="suites-main">';
     while($row2 = mysqli_fetch_assoc($result2)){
-      
+      if($row2['availability'] == 1){
         echo '
         <div class="suites-image">
           <img src="../images/rooms/'.$row2['image'].'" alt="Image 1" class="image">
@@ -43,6 +45,7 @@ require 'partials/_dbconnect.php';
         </div>
     
         ';}
+      }
 
     echo '</div>';
     ?>

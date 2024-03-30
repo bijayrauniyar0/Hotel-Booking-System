@@ -19,7 +19,7 @@
             align-items: center;
             padding: 10px;
         }
-        nav h1{
+        nav .admin-title{
            
             position: absolute;
             left: 20px;
@@ -44,14 +44,28 @@
             text-decoration: none;
             font-size: 22px;
         }
+        @media screen and (max-width: 576px){
+            nav .admin-title{
+                font-size: 16px;
+            }
+            nav ul li{
+                margin: 0 12px;
+            }
+            nav ul li a{
+                font-size: 12px;
+            }
+            
+        }
     </style>
+    
+<script src="https://kit.fontawesome.com/2f01e0402b.js" crossorigin="anonymous"></script>
 
 <header>
     <nav>
-        <h1>Admin Panel</h1>
+        <h1 class="admin-title">Admin Panel</h1>
         <ul>
-            <li><a href="check-rooms.php">Check Rooms</a></li>
-            <li><a href="">Check Bookings</a></li>
+            <li><a href="check-rooms.php">Rooms</a></li>
+            <li><a href="">Bookings</a></li>
             <li><a href="./partials/admin_logout.php">Logout</a></li>
         </ul>
     </nav>

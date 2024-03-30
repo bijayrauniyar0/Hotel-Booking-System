@@ -1,12 +1,13 @@
 <?php 
+session_start();
 
+include 'partials/_dbconnect.php';
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         header("location: index.php");
         exit;
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        include 'partials/_dbconnect.php';
 
         $createTableSql = "CREATE TABLE IF NOT EXISTS `users` (
             `ID` INT AUTO_INCREMENT PRIMARY KEY,
@@ -70,6 +71,7 @@
             if ($result) {
                 echo '<script>
                         alert("Success! Account Created Successfully")
+                        window.location.href="guest-login.php";
                     </script>';
             }
         }

@@ -103,7 +103,7 @@
                     <div class="pass-txt"><a href="#">Forgot password?</a></div>
                     <input type="submit" value="Login">
                 </form>
-                <div class="sign-txt">Not yet a member? <a href="signup.html">Sign up now</a></div>
+                <div class="sign-txt">Not yet a member? <a href="sign-up.php">Sign up now</a></div>
             </div>
         </div>
     </section>

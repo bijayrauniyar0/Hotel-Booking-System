@@ -79,7 +79,10 @@ if (!$loggedin) {
                                         $sql = "SELECT * FROM `roomprices`";
                                         $result = mysqli_query($conn, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo '<option value="' . $row['room_name'] . '">' . $row['room_name'] . '</option>';
+                                            if ($row['availability'] == 1){
+
+                                                echo '<option value="' . $row['room_name'] . '">' . $row['room_name'] . '</option>';
+                                            }
                                         }
                                         ?>
                                     </select>

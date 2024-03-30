@@ -1,4 +1,13 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php'; // Adjust the path as needed
+
+// Create a new PHPMailer instance
+$mail = new PHPMailer(true);
+
+
 session_start();
 if(!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true){
     header("location: guest-login.php");
@@ -59,12 +68,35 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $_SESSION["Name"] = $row["Name"];
             $result1=mysqli_query($conn,$sql1);
             if($result1){
-                echo'
-                <script>
-                alert("Successfully Booked");
-                window.location.href = "../html/index.php"; 
-                </script>
-                ';
+                try {
+                    // SMTP configuration
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = 'andreysandrey.10@gmail.com'; // Your Gmail email address
+                    $mail->Password = 'mmnm yqes yozb zewe'; // Your Gmail password
+                    $mail->SMTPSecure = 'tls';
+                    $mail->Port = 587; // TCP port to connect to
+                
+                    // Sender and recipient settings
+                    $mail->setFrom('verse@resort.com', 'Verse Resort'); // Sender's email address and name
+                    $mail->addAddress('rockerrauniyar@gmail.com', 'Bijay Rauniyar'); // Recipient's email address and name
+                
+                    // Email content
+                    $mail->isHTML(true);
+                    $mail->Subject = 'Test Email';
+                    $mail->Body = 'Your Booking has been confirmed. Thank you for choosing us.';
+                
+                    // Send the email
+                    $mail->send();
+                    echo '
+                    <script>
+                    alert("Success! Booking Confirmed");
+                    </script>
+                    ';
+                } catch (Exception $e) {
+                    echo "Email sending failed: {$mail->ErrorInfo}";
+                }
             }
             else{
                 echo'
@@ -78,4 +110,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 }
 
 ?>
-
