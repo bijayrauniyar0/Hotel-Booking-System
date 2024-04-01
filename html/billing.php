@@ -41,63 +41,7 @@ $sql22 = "SELECT * FROM users WHERE Email = '" . $_SESSION['email'] . "'";
 $result22 = mysqli_query($conn, $sql22);
 $row22 = mysqli_fetch_assoc($result22);
 
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://a.khalti.com/api/v2/epayment/initiate/',
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => '',
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS =>'{
-        "return_url": "https://example.com/payment/",
-        "website_url": "https://example.com/",
-        "amount": 1300,
-        "purchase_order_id": "test12",
-        "purchase_order_name": "test",
-        "customer_info": {
-            "name": "'.$row22['Name'].'",
-            "email": "'.$row22['Email'].'",
-            "phone": "'.$row22['Phone'].'"
-        },
-        "amount_breakdown": [
-          {
-              "label": "Mark Price",
-              "amount": 1000
-          },
-          {
-              "label": "VAT",
-              "amount": 300
-          }
-      ],
-      "product_details": [
-          {
-              "identity": "1234567890",
-              "name": "Khalti logo",
-              "total_price": 1300,
-              "quantity": 1,
-       "unit_price": 1300
-          }
-      ]
-    }
-    
-    ',
-    CURLOPT_HTTPHEADER => array(
-        'Authorization: key f9193f79b3744049a609c4cd63407773',
-        'Content-Type: application/json',
-    ),
-    ));
-
-    $response = curl_exec($curl);
-
-    curl_close($curl);
-    // echo $response;
-
-$response_obj = json_decode($response);
-$payment_url = $response_obj->payment_url;
-
+   
 
 
 
@@ -163,14 +107,14 @@ echo '
                          <!-- <form action="billing.php" method="get"> -->
                           <label for="khalti" class="radio-label">
                               <input type="radio" id="khalti" name="ewallet">
-                              <img src="../images/khalti.png"  onclick="payment()">
+                              <img src="../images/khalti.png">
                           </label>
                           <!-- </form>  -->
                           
-                          <!-- <label for="esewa" class="radio-label">
+                          <label for="esewa" class="radio-label">
                               <input type="radio" id="esewa" name="ewallet">
                               <img src="../images/esewa.png">
-                          </label> -->
+                          </label>
                       </div>
                   </div>
                   <div class="cash">
@@ -194,10 +138,5 @@ echo '
   <?php include "partials/_footer.php"; ?>
 
   <script src="../js/script.js"></script>
-  <script>
-    function payment() {
-      window.location.href = "<?php echo $payment_url; ?>";
-    }
-  </script>
 </body>
 </html>
