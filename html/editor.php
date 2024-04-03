@@ -7,17 +7,17 @@ $bookingHistory = false;
 if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
     header("location:guest:login.php");
 }
-    $sql = "SELECT * FROM bookingdetails WHERE Email = '".$_SESSION['email']."'";
+    $sql3 = "SELECT * FROM bookingdetails WHERE Email = '".$_SESSION['email']."'";
     $sql1= "SELECT * FROM users WHERE Email = '".$_SESSION['email']."'";
 
-    $result = mysqli_query($conn, $sql);
+    $result3 = mysqli_query($conn, $sql3);
     $result1 = mysqli_query($conn, $sql1);
 
-    $num = mysqli_num_rows($result);
+    $num3 = mysqli_num_rows($result3);
     $num1 = mysqli_num_rows($result1);
 
     $user_data = mysqli_fetch_assoc($result1);
-    if($num == 0){
+    if($num3 == 0){
         $bookingHistory = false;
     }
     else{
@@ -34,7 +34,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
     <title>My Profile</title>
 </head>
 <body>
-    <?php require "partials/nav.php"; ?>
+    <?php include "partials/nav.php"; ?>
 
     <section id="data-container">
     <div class="my-profile">
@@ -87,14 +87,14 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
                 </thead>
                 <tbody>';
                 
-                    while($row = mysqli_fetch_assoc($result)){
+                    while($row3 = mysqli_fetch_assoc($result3)){
 
                     echo "<tr>";
-                    echo "<td>" . $row["NameForBooking"] . "</td>";
-                    echo "<td>" . $row["RoomType"] . "</td>";
-                    echo "<td>" . $row["NumberOfRooms"] . "</td>";
-                    echo "<td>" . $row["CheckIn"] . "</td>";
-                    echo "<td>" . $row["CheckOut"] . "</td>";
+                    echo "<td>" . $row3["NameForBooking"] . "</td>";
+                    echo "<td>" . $row3["RoomType"] . "</td>";
+                    echo "<td>" . $row3["NumberOfRooms"] . "</td>";
+                    echo "<td>" . $row3["CheckIn"] . "</td>";
+                    echo "<td>" . $row3["CheckOut"] . "</td>";
                     echo "</tr>";
                     }
                 }
@@ -106,8 +106,9 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
             </div>
         </div>
     </div>
-    </section>
+    </section>';
+    require "partials/_footer.php";
+    echo'
 </body>
 </html>';
-require "partials/_footer.php";
 ?>

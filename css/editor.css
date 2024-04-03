@@ -20,6 +20,8 @@
     background-color: rgb(228, 180, 109);
     flex-shrink: 0;
     margin: 10px 20px;
+    height: 400px;
+    padding: 10px 0;
 
 }
  .right-container{
@@ -29,7 +31,29 @@
     background-color: rgb(228, 180, 109);
     flex-shrink: 0;
     margin: 10px 20px;
+    height: 400px;
+    overflow: auto;
+    padding: 10px 0;
+    overflow-x: hidden;
+    
 
+}
+.right-container::-webkit-scrollbar {
+    width: 12px;
+    
+}
+.right-container::-webkit-scrollbar-track {
+    background: #ffdb0c00; 
+}
+.right-container::-webkit-scrollbar-thumb {
+    background: #f1f1f100; 
+    border-radius: 10px;
+}
+.right-container:hover::-webkit-scrollbar-thumb {
+    background: #ffdb0caf;
+}
+.right-container:hover::-webkit-scrollbar-track {
+    background-color: #ffffff;
 }
 
 .credentials{

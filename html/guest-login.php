@@ -21,7 +21,6 @@
             $_SESSION['name'] = $row['Name'];
                 if(password_verify($password, $row["Password"])){ 
                     //input password is converted into has then the hash checked from the database
-                    session_start();
                     $_SESSION['loggedin']=true;
                     $_SESSION['email']=$email;
                     echo 
@@ -78,7 +77,9 @@
     </style>
 </head>
 <body>
-<?php require 'partials/nav.php'; ?>
+<?php 
+require 'partials/nav.php'; 
+?>
 
     <section class="main-block">
         <div class="form-container">

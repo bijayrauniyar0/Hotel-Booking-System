@@ -19,7 +19,9 @@ include 'partials/_dbconnect.php';
     <title>Hotel Booking System</title>
 </head>
 <body>
-<?php require 'partials/nav.php'; ?>
+<?php 
+require 'partials/nav.php'; 
+?>
 
     <main style="position: relative;">
         <!-- Slide show container -->
