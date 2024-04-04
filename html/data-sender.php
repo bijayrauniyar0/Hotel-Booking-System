@@ -69,14 +69,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     $mail->isSMTP();
                     $mail->Host = 'smtp.gmail.com';
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'andreysandrey.10@gmail.com'; // Your Gmail email address
-                    $mail->Password = 'mmnm yqes yozb zewe'; // Your Gmail password
+                    $mail->Username = ''; // Your Gmail email address
+                    $mail->Password = ''; // Your Gmail password
                     $mail->SMTPSecure = 'tls';
                     $mail->Port = 587; // TCP port to connect to
                 
                     // Sender and recipient settings
                     $mail->setFrom('verse@resort.com', 'Verse Resort'); // Sender's email address and name
-                    $mail->addAddress('rockerrauniyar@gmail.com', 'Bijay Rauniyar'); // Recipient's email address and name
+                    $mail->addAddress($_SESSION["email"], $_SESSION["userName"]); // Recipient's email address and name
                 
                     // Email content
                     $mail->isHTML(true);
