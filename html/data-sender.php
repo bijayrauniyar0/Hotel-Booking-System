@@ -69,8 +69,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     $mail->isSMTP();
                     $mail->Host = 'smtp.gmail.com';
                     $mail->SMTPAuth = true;
-                    $mail->Username = ''; // Your Gmail email address
-                    $mail->Password = ''; // Your Gmail password
+                    $mail->Username = 'your_mail_id'; // Your Gmail email address
+                    $mail->Password = 'your_pw'; // Your Gmail password
                     $mail->SMTPSecure = 'tls';
                     $mail->Port = 587; // TCP port to connect to
                 
