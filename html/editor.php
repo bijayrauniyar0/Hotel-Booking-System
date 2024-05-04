@@ -7,14 +7,13 @@ $bookingHistory = false;
 if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
     header("location:guest:login.php");
 }
-    $sql3 = "SELECT * FROM bookingdetails WHERE Email = '".$_SESSION['email']."'";
     $sql1= "SELECT * FROM users WHERE Email = '".$_SESSION['email']."'";
-
-    $result3 = mysqli_query($conn, $sql3);
     $result1 = mysqli_query($conn, $sql1);
-
-    $num3 = mysqli_num_rows($result3);
     $num1 = mysqli_num_rows($result1);
+
+    $sql3 = "SELECT * FROM bookingdetails WHERE Email = '".$_SESSION['email']."'";
+    $result3 = mysqli_query($conn, $sql3);
+    $num3 = mysqli_num_rows($result3);
 
     $user_data = mysqli_fetch_assoc($result1);
     if($num3 == 0){
@@ -34,11 +33,10 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
     <title>My Profile</title>
 </head>
 <body>
-    <?php include "partials/nav.php"; ?>
-
+<?php require "partials/nav.php"; ?>
     <section id="data-container">
     <div class="my-profile">
-    <h1> My Profile </h1>
+    <h1 id="heading"> My Profile </h1>
     </div>
     <div class="profile-container">
         <div class="left-container">
@@ -88,7 +86,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) {
                 <tbody>';
                 
                     while($row3 = mysqli_fetch_assoc($result3)){
-
                     echo "<tr>";
                     echo "<td>" . $row3["NameForBooking"] . "</td>";
                     echo "<td>" . $row3["RoomType"] . "</td>";
