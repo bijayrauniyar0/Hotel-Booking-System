@@ -17,7 +17,7 @@
                 <a href="">Sign Up</a>
             </div>
             <div class="copy-right">
-                <p>&copy; 2021 All rights reserved</p>
+                <p>&copy; 2024 All rights reserved</p>
             </div>
         </div>
     </footer>
