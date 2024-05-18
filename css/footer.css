@@ -7,9 +7,10 @@ footer{
 footer .container{
   border-radius: 20px;
   width: 95%;
-  background-color: #fdf7ef;
+  background-color: #ffffff;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.27);
+  box-shadow: 0px 0px 6px black;
 }
 footer a i{
   font-size: 2rem;

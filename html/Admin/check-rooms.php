@@ -77,7 +77,7 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
         }
         .image-box{
@@ -243,30 +243,27 @@
         $j = 0;
         while($row1 = mysqli_fetch_assoc($result1)){
             $j++;
-            if($j==1){
-                echo'
-                <h2 class="available-title"> Unavailable Rooms</h2>
-                ';
-            }
-            if($j==1){
-                echo'
-                <div class="container">
-                ';
-            }
+            
             if($row1['availability'] == 0){
+                if($j==1){
+                    echo'
+                    <h2 class="available-title"> Unavailable Rooms</h2>
+                    ';
+                    echo'
+                    <div class="container">
+                    ';
+                }
                     echo'
                     <div class="image-box">
                         <img src="../../images/rooms/'.$row1['image'].'" alt="Room Image">
                         <h3>'.$row1['room_name'].'</h3>
                     </div>
                     ';
-                
             }
-           
            
         }
         echo'
-        </div>
+            </div>
         ';
     }
     ?>
