@@ -42,8 +42,8 @@ echo '
             <div class="mid">
                 <ul>
                     <li><a href="../html/index.php">Home</a></li>
-                    <li><a href="../html/reservations.php">Reservations</a></li>
-                    <li><a href="#contact" data-target="contact">Contact US</a></li>';
+                    <li><a href="../html/reservations.php">Reservations</a></li>';
+                    // <li><a href="#contact" data-target="contact">Contact US</a></li>';
                     
                     //if user is logged in then only logout option is shown
 
