@@ -50,8 +50,9 @@ nav .left{
   left: 30px;
 }
 nav .mid{
-  position: absolute;
-  left: 22%;
+  margin: 0 auto;
+  /* position: absolute;
+  left: 22%; */
 }
 nav ul {
   display: flex;

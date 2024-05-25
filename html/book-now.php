@@ -14,7 +14,7 @@ if (!$loggedin) {
     echo '
         <script>
         alert("You are not logged in");
-        window.location.href="../HTML/guest-login.php";
+        window.location.href="../html/guest-login.php";
         </script>
         ';
 }

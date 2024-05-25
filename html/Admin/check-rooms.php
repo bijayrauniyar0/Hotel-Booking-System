@@ -156,6 +156,11 @@
             font-size: 1.2rem;
             margin-top: 20px;
         }
+        @media screen and (max-width: 992px){
+            .change-content{
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
