@@ -85,7 +85,29 @@ input[type="submit"]:hover {
 .sign-txt a:hover {
     text-decoration: underline;
 }
+.otp-field{
+    display: flex;
+}
+.otp-field button{
+    width: 28% !important;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+    background-color: #5372F0;
+    transition: .2s ease;
+    color: white;
+    font-size: 12px;
 
+}
+.otp-field button:hover{
+    background-color: #2c52ed;
+
+}
+.otp-field input{
+    width: 70% !important;
+}
 @media screen and (max-width: 768px) {
     .wrapper {
         margin: 120px auto;

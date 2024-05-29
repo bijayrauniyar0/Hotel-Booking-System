@@ -51,8 +51,8 @@ include 'partials/_dbconnect.php';
         } 
         elseif ($password != $cPassword) {
             echo '<script>
-        alert("Error! Passwords Do Not Match")
-       </script>';
+            alert("Error! Passwords Do Not Match")
+        </script>';
         } 
         elseif ($numberLength != 10 || !is_numeric($phoneNumber)) {
             echo '<script>
@@ -89,6 +89,20 @@ include 'partials/_dbconnect.php';
     <link href="https://fonts.googleapis.com../css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/sign-up.css">
     <title>Hotel Booking System</title>
+    <style>
+        #error{
+            color: red;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #success{
+            color: green;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -99,6 +113,8 @@ include 'partials/_dbconnect.php';
             <div class="wrapper">
                 <h1>Sign Up</h1>
                 <form id="signup-form" name="signupForm" action="../html/sign-up.php" method="POST">
+                    <div id="error"></div>
+                    <div id="success"></div>
                     <div class="field">
                         <label for="fullName">Full Name</label>
                         <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
@@ -136,13 +152,94 @@ include 'partials/_dbconnect.php';
                         <span id="match-Error"></span>
 
                     </div>
-                    <input type="submit" value="Sign Up">
+                    <div class="field">
+                        <div class="otp-field">
+                            <input type="number" name="" id="otp" placeholder="OTP" required>
+                            <button id="otp-btn">
+                                Send OTP
+                            </button>
+                        </div>
+                    </div>
+                    <input type="submit" value="Sign Up" id="sign-up-btn">
                 </form>
                 <div class="sign-txt">Already a member? <a href="guest-login.php">Login here</a></div>
             </div>
         </div>
     </section>
+    <script>
+        let otp
+        let btn = document.getElementById('otp-btn')
+        btn.addEventListener('click', function(event){
+            let form = document.getElementById('signup-form');
+            let formData = new FormData(form);
+            let email = document.getElementById('email').value
+            let error = document.getElementById('error')
+            let success = document.getElementById('success')
+            event.preventDefault();
+           
+            if(!email){
+                error.innerHTML = 'Please enter your email'
+                setTimeout(() => {
+                    error.innerHTML = ''
+                }, 4000);
+            }else{
+               var data = new URLSearchParams();
+                data.append('email', email);
 
+                fetch('send_otp.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: data
+                })
+                .then(response => response.text())
+                .then(data => {
+                    success.innerHTML = 'OTP sent successfully'
+                    setTimeout(() => {
+                        success.innerHTML = ''
+                    }, 4000);
+                    otp = data
+                    
+                })
+                .catch(error =>{
+                    error.innerHTML = 'Error sending OTP'
+                    setTimeout(() => {
+                        error.innerHTML = ''
+                    }, 4000);
+                })
+                }
+            
+        });
+        
+        document.getElementById('sign-up-btn').addEventListener('click', function(event){
+            let error = document.getElementById('error')
+            let success = document.getElementById('success')
+            event.preventDefault();
+            let form = document.getElementById('signup-form');
+            let name = document.getElementById('fullName');
+            if(!validateName(name.value)){
+                error.innerHTML = 'Please enter a valid name'
+                setTimeout(() => {
+                    error.innerHTML = ''
+                }, 4000);
+                return
+            }
+            if(otp != document.getElementById('otp').value){
+                error.innerHTML = 'Please enter the correct OTP'
+                setTimeout(() => {
+                    error.innerHTML = ''
+                }, 4000);
+                return
+            }
+            form.submit()
+            
+        })
+        function validateName(name){
+            const complexNameRegex = /^[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$/;
+            return complexNameRegex.test(name)
+        }
+    </script>
 <script src="../js/login.js"></script>
   </body>
 </body>
